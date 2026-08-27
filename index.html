@@ -1135,6 +1135,204 @@
             color: white;
         }
 
+        /* ===== About ===== */
+        .about-section {
+            background: linear-gradient(180deg, var(--bg) 0%, var(--bg-secondary) 100%);
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 56px;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .about-header .section-label {
+            display: block;
+        }
+        .about-header .section-title {
+            margin-bottom: 16px;
+        }
+        .about-lead {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+        .about-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.9;
+        }
+        .about-desc strong {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .about-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        [data-theme="dark"] .about-card {
+            background: var(--bg-tertiary);
+            border-color: var(--border);
+        }
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--purple), var(--cyan));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .about-card:hover::before { transform: scaleX(1); }
+        .about-card:hover {
+            border-color: rgba(99,102,241,0.3);
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-6px);
+        }
+
+        .about-card-icon {
+            width: 52px; height: 52px;
+            border-radius: 14px;
+            background: var(--accent-light);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.35s;
+            color: var(--accent);
+        }
+        .about-card-icon svg { width: 24px; height: 24px; }
+        .about-card:hover .about-card-icon {
+            background: linear-gradient(135deg, var(--accent), var(--purple));
+            color: white;
+            transform: scale(1.1) rotate(-3deg);
+        }
+
+        .about-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        .about-card p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.75;
+        }
+
+        .about-philosophy {
+            background: linear-gradient(135deg, var(--accent-light), rgba(139,92,246,0.06));
+            border: 1px solid rgba(99,102,241,0.12);
+            border-radius: var(--radius-xl);
+            padding: 36px 40px;
+            margin-bottom: 48px;
+            position: relative;
+            overflow: hidden;
+        }
+        [data-theme="dark"] .about-philosophy {
+            background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,92,246,0.08));
+            border-color: rgba(99,102,241,0.18);
+        }
+        .about-philosophy::before {
+            content: '';
+            position: absolute;
+            top: -40px; right: -40px;
+            width: 160px; height: 160px;
+            background: radial-gradient(circle, var(--accent-glow), transparent);
+            border-radius: 50%;
+            opacity: 0.6;
+        }
+        .about-philosophy-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--accent);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .about-philosophy-label::before {
+            content: '';
+            width: 20px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        .about-philosophy blockquote {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.8;
+            font-style: normal;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-status {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .about-status-item {
+            display: flex;
+            gap: 16px;
+            padding: 24px 28px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            align-items: flex-start;
+        }
+        [data-theme="dark"] .about-status-item {
+            background: var(--bg-tertiary);
+            border-color: var(--border);
+        }
+        .about-status-item:hover {
+            border-color: rgba(99,102,241,0.3);
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-4px);
+        }
+        .about-status-item > div { flex: 1; }
+        .about-status-item strong {
+            display: block;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+        }
+        .about-status-item span {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .status-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            margin-top: 7px;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 4px var(--accent-light);
+            animation: pulse-dot 2s infinite;
+        }
+
         /* ===== Footer ===== */
         footer {
             padding: 56px 24px 32px;
@@ -1258,12 +1456,18 @@
             .stats-bar { gap: 32px; }
             .repos-grid { grid-template-columns: 1fr; }
             .skills-grid { grid-template-columns: 1fr 1fr; }
+            .about-grid { grid-template-columns: 1fr; }
+            .about-philosophy { padding: 28px 24px; }
+            .about-philosophy blockquote { font-size: 1rem; }
+            .about-status { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 480px) {
             .skills-grid { grid-template-columns: 1fr; }
             .hero-links { flex-direction: column; align-items: center; }
             .hero-avatar { width: 90px; height: 90px; }
+            .about-card { padding: 24px; }
+            .about-status-item { padding: 20px; }
         }
     </style>
 </head>
@@ -1283,6 +1487,7 @@
             MYTH
         </a>
         <ul class="nav-links" id="navLinks">
+            <li><a href="#home">首页</a></li>
             <li><a href="#about">关于</a></li>
             <li><a href="#repos">GitHub</a></li>
             <li><a href="#wechat">公众号</a></li>
@@ -1301,16 +1506,16 @@
 </nav>
 
 <!-- Hero -->
-<section class="hero" id="about">
+<section class="hero" id="home">
     <div class="container">
         <div class="hero-badge">
             <span class="badge-dot"></span>
-            工业互联网 · 物联网开发 · Python 自动化
+            MYTH / AI 产品工程师
         </div>
 
         <div class="hero-avatar-wrap">
             <div class="hero-avatar-ring"></div>
-            <div class="hero-avatar"><img src="avatar.jpg" alt="MYTH" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 110 110%22><rect fill=%22%236366f1%22 width=%22110%22 height=%22110%22 rx=%2255%22/><text x=%2255%22 y=%2268%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2248%22 font-family=%22system-ui%22 font-weight=%22800%22>M</text></svg>'"></div>
+            <div class="hero-avatar"><img src="avatar.svg" alt="MYTH" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 110 110%22><rect fill=%22%231a1a2e%22 width=%22110%22 height=%22110%22 rx=%2255%22/><text x=%2255%22 y=%2272%22 text-anchor=%22middle%22 fill=%22%237dd3fc%22 font-size=%2252%22 font-family=%22system-ui%22 font-weight=%22800%22>M</text></svg>'"></div>
         </div>
 
         <h1>Hi, 我是 <span class="gradient">MYTH</span></h1>
@@ -1346,6 +1551,69 @@
     </div>
 </section>
 
+<!-- About -->
+<section class="about-section" id="about">
+    <div class="container">
+        <div class="about-header fade-up">
+            <div class="section-label">关于我</div>
+            <h2 class="section-title">Hi，我是 MYTH 👋</h2>
+            <p class="about-lead">
+                一个介于产品和工程之间的人。
+            </p>
+            <p class="about-desc">
+                我不满足于"知道这个 AI 产品好用"，更想知道<strong>它为什么好用、怎么实现的、边界在哪里</strong>。
+                所以我既写产品拆解，也写代码级的功能实现分析。
+            </p>
+        </div>
+
+        <div class="about-grid fade-up">
+            <div class="about-card">
+                <div class="about-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <h3>AI 应用开发</h3>
+                <p>基于大模型构建工具与自动化方案，Python 是主力武器。</p>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.12 19a7 7 0 0 1 0-14M18.88 5a7 7 0 0 1 0 14M8.46 12a3.5 3.5 0 0 1 7 0M12 8.5v7"/></svg>
+                </div>
+                <h3>物联网 / 工业互联网</h3>
+                <p>从设备接入（MQTT）到数据落地，完整链路实践。</p>
+            </div>
+            <div class="about-card">
+                <div class="about-card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </div>
+                <h3>内容输出</h3>
+                <p>公众号「Myth Zx」主理人，AI 产品 × 技术双视角拆解，每周 1-2 篇深度长文。</p>
+            </div>
+        </div>
+
+        <div class="about-philosophy fade-up">
+            <div class="about-philosophy-label">我相信的做事方式</div>
+            <blockquote>先跑通最小闭环，再谈规模化。能用代码验证的结论，不靠猜。</blockquote>
+        </div>
+
+        <div class="about-status fade-up">
+            <div class="about-status-item">
+                <span class="status-dot"></span>
+                <div>
+                    <strong>当下状态</strong>
+                    <span>内蒙古在读，长期寻找 AI 产品方向的实习与合作机会。</span>
+                </div>
+            </div>
+            <div class="about-status-item">
+                <span class="status-dot" style="background:var(--green);"></span>
+                <div>
+                    <strong>暑假可全职到岗</strong>
+                    <span>自带电脑与 Python 开发环境，随时开工。</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- GitHub Repos -->
 <section id="repos">
     <div class="container">
@@ -1369,7 +1637,7 @@
         <div class="fade-up">
             <div class="section-label">微信公众号</div>
             <h2 class="section-title">Myth Zx</h2>
-            <p class="section-desc">AI 产品 x 技术双视角拆解，产品测评 + 代码级功能拆解 + PM 实战分享。</p>
+            <p class="section-desc">AI 产品 × 技术双视角拆解，产品测评 + 代码级功能拆解 + PM 实战分享。</p>
         </div>
         <div class="wechat-card fade-up">
             <div class="wechat-qr-wrap">
@@ -1381,13 +1649,13 @@
             <div class="wechat-info">
                 <h3>Myth Zx</h3>
                 <p>
-                    专注工业物联网与 Python 自动化技术分享。记录从传感器数据采集、
-                    MQTT 协议传输到 Web 可视化的完整技术路径，以及在内蒙古牧区的物联网应用实践。
+                    AI 产品 × 技术双视角拆解。拆解爆款 AI 产品的设计逻辑、代码级功能实现，
+                    分享从产品思路到工程落地的完整路径，以及物联网与工业互联网实践。
                 </p>
                 <div class="wechat-tags">
-                    <span class="wechat-tag">物联网应用</span>
-                    <span class="wechat-tag">MQTT 协议</span>
-                    <span class="wechat-tag">传感器开发</span>
+                    <span class="wechat-tag">AI 产品拆解</span>
+                    <span class="wechat-tag">代码级分析</span>
+                    <span class="wechat-tag">物联网实践</span>
                     <span class="wechat-tag">Python 自动化</span>
                 </div>
             </div>
@@ -1401,7 +1669,7 @@
         <div class="fade-up">
             <div class="section-label">小红书</div>
             <h2 class="section-title">@Myth Zx</h2>
-            <p class="section-desc">物联网技术实践、工业自动化探索、代码学习笔记，用图文记录技术成长之路。</p>
+            <p class="section-desc">AI 产品拆解笔记、物联网技术实践、代码学习心得，用图文记录技术成长之路。</p>
         </div>
         <div class="xiaohongshu-card fade-up">
             <div class="xiaohongshu-qr-wrap">
@@ -1413,52 +1681,14 @@
             <div class="xiaohongshu-info">
                 <h3>@Myth Zx</h3>
                 <p>
-                    分享物联网项目开发、Python 自动化脚本、硬件接入调试的技术实践。
-                    从校园到工业现场，记录每一个技术突破的瞬间。
+                    AI 产品拆解笔记、物联网项目实战、Python 自动化脚本分享。
+                    用图文记录从产品思考到工程落地的每一步成长。
                 </p>
                 <div class="xiaohongshu-tags">
-                    <span class="xiaohongshu-tag">物联网项目</span>
+                    <span class="xiaohongshu-tag">AI 产品拆解</span>
+                    <span class="xiaohongshu-tag">物联网实战</span>
                     <span class="xiaohongshu-tag">Python 自动化</span>
-                    <span class="xiaohongshu-tag">硬件调试</span>
                     <span class="xiaohongshu-tag">技术成长</span>
-                </div>
-                <div style="margin-top: 16px;">
-                    <a href="https://xhslink.com/m/12QJNYlEjFB" target="_blank" class="btn btn-secondary" style="background:linear-gradient(135deg,rgba(255,48,48,0.1),rgba(255,144,144,0.1));color:#ff3030;border-color:rgba(255,48,48,0.2);">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-                        打开小红书
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Xiaohongshu -->
-<section class="xiaohongshu-section" id="xiaohongshu">
-    <div class="container">
-        <div class="fade-up">
-            <div class="section-label">小红书</div>
-            <h2 class="section-title">@Myth Zx</h2>
-            <p class="section-desc">AI 工具测评、效率提升技巧、产品设计灵感，用图文带你玩转 AI 时代。</p>
-        </div>
-        <div class="xiaohongshu-card fade-up">
-            <div class="xiaohongshu-qr-wrap">
-                <div class="xiaohongshu-qr-glow"></div>
-                <div class="xiaohongshu-qr" style="display: flex; align-items: center; justify-content: center; background: #f5f5f5;">
-                    <img src="xiaohongshu.jpg" alt="小红书头像" style="width: 85%; height: 85%; object-fit: contain;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 170 170%22%3E%3Crect fill=%22%23f5f5f5%22 width=%22170%22 height=%22170%22 rx=%2212%22/%3E%3Ctext x=%2285%22 y=%22100%22 text-anchor=%22middle%22 fill=%22%23ff3030%22 font-size=%2264%22 font-family=%22system-ui%22 font-weight=%22800%22%3E%E5%B0%8F%E7%BA%A2%E4%B9%A6%3C/text%3E%3C/svg%3E'">
-                </div>
-            </div>
-            <div class="xiaohongshu-info">
-                <h3>@Myth Zx</h3>
-                <p>
-                    分享 AI 工具使用技巧、产品设计思路、效率提升方法。
-                    用轻松易懂的方式，带你探索 AI 时代的无限可能。
-                </p>
-                <div class="xiaohongshu-tags">
-                    <span class="xiaohongshu-tag">AI 工具</span>
-                    <span class="xiaohongshu-tag">效率技巧</span>
-                    <span class="xiaohongshu-tag">产品设计</span>
-                    <span class="xiaohongshu-tag">AI 教程</span>
                 </div>
                 <div style="margin-top: 16px;">
                     <a href="https://xhslink.com/m/12QJNYlEjFB" target="_blank" class="btn btn-secondary" style="background:linear-gradient(135deg,rgba(255,48,48,0.1),rgba(255,144,144,0.1));color:#ff3030;border-color:rgba(255,48,48,0.2);">
@@ -1559,8 +1789,7 @@
             <div class="section-label">联系方式</div>
             <h2 class="section-title">保持联系</h2>
             <p class="section-desc">
-                有合作机会或问题？随时与我联系，我会尽快回复。<br>
-                <strong style="color:var(--accent);">内蒙古在读，暑假可全职到岗，自带 Python 开发环境。</strong>
+                有合作机会或问题？随时与我联系，我会尽快回复。
             </p>
         </div>
         <div class="contact-grid fade-up">
@@ -1845,9 +2074,9 @@ const CONFIG = {
 // ===== Typewriter Effect =====
 (function() {
     const texts = [
-        '工业互联网开发者，专注 Python 自动化与物联网应用。',
-        '内蒙古在读，暑假可全职到岗，自带开发环境。',
-        '物联网数据采集 | MQTT 协议 | 传感器应用'
+        'AI 产品工程师 · 内蒙古在读',
+        '写代码的产品人，做产品的工程师',
+        '公众号「Myth Zx」主理人 | AI × 技术双视角拆解'
     ];
     const el = document.getElementById('typedText');
     let textIdx = 0, charIdx = 0, deleting = false;
