@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor 与 Trae，在国内网络下我各自的体感 | MYTH 的博客</title>
+    <meta name="description" content="同一台机器上两个 AI 编辑器，网络才是分水岭">
+    <meta property="og:title" content="Cursor 与 Trae，在国内网络下我各自的体感 | MYTH 的博客">
+    <meta property="og:description" content="同一台机器上两个 AI 编辑器，网络才是分水岭">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hjtr7mymht-dot.github.io/blog/posts/cursor-vs-trae-domestic.html">
+    <link rel="alternate" type="application/rss+xml" title="MYTH 的博客" href="../feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            var t = localStorage.getItem('theme');
+            if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', t);
+            // 入场动画只在 JS 可用时生效；blog.js 没跑起来就 3.5 秒后自动取消隐藏
+            document.documentElement.classList.add('js-anim');
+            setTimeout(function () {
+                if (!window.__blogReady) document.documentElement.classList.remove('js-anim');
+            }, 3500);
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/blog.css">
+</head>
+<body>
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="../../index.html" class="nav-logo">
+            <span class="logo-icon">M</span>
+            MYTH
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../../index.html">首页</a></li>
+            <li><a href="../../index.html#about">关于</a></li>
+            <li><a href="../../index.html#repos">GitHub</a></li>
+            <li><a href="../../index.html#wechat">公众号</a></li>
+            <li><a href="../index.html" class="">博客</a></li>
+            <li><a href="../../index.html#contact">联系</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="菜单">
+            <span></span><span></span><span></span>
+        </button>
+        <button class="nav-theme-toggle" id="themeToggle" aria-label="切换主题">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="19.78" y1="4.22" x2="18.36" y2="5.64"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="container post-main">
+    <a class="back-link" href="../index.html">← 返回博客首页</a>
+    <article class="post-article">
+        <header class="post-header fade-up">
+            <div class="post-card-meta">
+                <time datetime="2026-11-05">2026 年 11 月 5 日</time>
+                <span class="tag">AI工具评测</span><span class="tag">开发日志</span>
+            </div>
+            <h1>Cursor 与 Trae，在国内网络下我各自的体感</h1>
+            <p class="post-lede">同一台机器上两个 AI 编辑器，网络才是分水岭</p>
+        </header>
+        <div class="prose fade-up">
+<p>这两年写代码，我基本上离不开 AI 编辑器了。学校机房的网络一会儿稳一会儿抽风，家里乌海那边又是另一种情况。手上同时装着 Cursor 和 Trae，用了一段时间，倒不是谁比谁强，而是它们在国内网络下的"脾气"差得比我想象中大，今天就把各自的体感记下来。</p>
+<h2 id="先说网络这件事">先说网络这件事</h2>
+<p>我主力机是隐星 P15，i7-12700H 配 RTX4060，性能足够跑这些编辑器。但再强的机器也扛不住网络掉线。Cursor 的底层模型调用走的是海外节点，订阅要双币信用卡，我那张是家里人给办的。问题不在付钱，在于它经常"转圈"。写一半正改着函数，它突然连不上，补全直接断了，右下角转半天最后弹个 <code>Request failed</code>。在机房连校园网的时候尤其明显，有时候要挂代理才能稳。</p>
+<p>Trae 是字节出的，国内版直接走国内节点，这点体验是碾压级的。打开就能用，补全几乎不卡，没有那种"它在海外和我隔着一堵墙"的延迟感。我第一次在宿舍不挂任何东西直接用它写完一个 PyInstaller 打包脚本，那种顺滑让我有点意外。</p>
+<h2 id="补全和对话的区别">补全和对话的区别</h2>
+<p>Cursor 最强的地方是 <code>Cmd+K</code> 的 inline 修改和那个 <code>Tab</code> 多位置补全。它真的能猜到我下一步想改哪几行，尤其是重构一个长函数的时候，按一次 Tab 它能连带改动好几处。这一点 Trae 目前还差半拍，它的 Tab 补全更像是单行层面的智能，跨函数联动没那么准。</p>
+<p>但我得说实话：Trae 的对话窗口对中文项目更友好。我让它读我那个 WOA_AutoBot 的目录结构、解释某个图像识别的踩坑点，它给的解释更贴我写的注释风格。Cursor 的对话也不差，可有时候它默认按英文 repo 的惯例来理解我的变量名，遇到我那种中文拼音混搭的命名会多绕一下。</p>
+<h2 id="模型上的取舍">模型上的取舍</h2>
+<p>Cursor 能切模型，Claude 写前端、GPT 写逻辑，我习惯分着用。可海外模型一旦网络波动，切来切去反而耽误事。Trae 国内版默认豆包和 DeepSeek，写 Python 自动化脚本够用，复杂点的算法题会显得"保守"一点，不敢大胆给方案。</p>
+<p>一个我很在意的细节：两者都吃上下文。Cursor 的上下文窗口管理更聪明，长文件里它能精准定位相关片段；Trae 在超长文件上偶尔会"顾头不顾尾"，我把一个 800 行的主程序丢进去，它前几屏记得住，后面就有点飘。</p>
+<h2 id="我的实际分工">我的实际分工</h2>
+<p>现在我基本是这么分的：需要稳定连续地写一段完整功能、又不想被网络打断的时候，开 Trae， especially 在宿舍和机房这种网络环境不明的地方。需要精细重构、多位置补全、或者要海外模型出那种"灵光一现"的结构设计时，我会切到 Cursor，前提是我把代理挂稳。</p>
+<p>说白了，这不是"哪个更好"的问题，是"哪个在此时此地更靠谱"的问题。作为学生党，我没那么多预算去折腾各种订阅，Trae 的免费额度对我这种练手项目已经够用；Cursor 我留着它，是留给那种真的需要它那一下"神来之笔"的时刻。</p>
+<h2 id="一点小提醒">一点小提醒</h2>
+<p>如果你也打算两个都装，记得它们都基于 VS Code 那套，键位基本通用，切换成本很低。别指望一个编辑器解决所有事，国内网络这个变量，比编辑器本身更难驯服。先把网络这关过顺，工具才能真正帮上忙。</p>
+        </div>
+    </article>
+    <div class="post-nav"><a class="post-nav-link" href="claude-code-blog-generator.html"><span>更新一篇</span><strong>用 Claude Code 搭个人博客生成器，踩坑比想象中少</strong></a><a class="post-nav-link next" href="hello-blog.html"><span>更早一篇</span><strong>个人博客开张了：为什么我又给自己加了个静态站</strong></a></div>
+</main>
+<footer class="site-footer">
+    <div class="footer-inner">
+        <p>© 2026 MYTH · 用 Python 生成的静态博客</p>
+        <div class="footer-links">
+            <a href="../../index.html">首页</a>
+            <a href="../../index.html#repos">开源项目</a>
+            <a href="https://github.com/hjtr7mymht-dot" target="_blank" rel="noopener">GitHub</a>
+            <a href="../feed.xml">RSS</a>
+        </div>
+    </div>
+</footer>
+<script src="../assets/blog.js"></script>
+</body>
+</html>
