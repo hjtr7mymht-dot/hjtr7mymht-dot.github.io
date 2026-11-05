@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用 Claude Code 搭个人博客生成器，踩坑比想象中少 | MYTH 的博客</title>
+    <meta name="description" content="纯标准库撸了个零依赖静态博客生成器">
+    <meta property="og:title" content="用 Claude Code 搭个人博客生成器，踩坑比想象中少 | MYTH 的博客">
+    <meta property="og:description" content="纯标准库撸了个零依赖静态博客生成器">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hjtr7mymht-dot.github.io/blog/posts/claude-code-blog-generator.html">
+    <link rel="alternate" type="application/rss+xml" title="MYTH 的博客" href="../feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            var t = localStorage.getItem('theme');
+            if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', t);
+            // 入场动画只在 JS 可用时生效；blog.js 没跑起来就 3.5 秒后自动取消隐藏
+            document.documentElement.classList.add('js-anim');
+            setTimeout(function () {
+                if (!window.__blogReady) document.documentElement.classList.remove('js-anim');
+            }, 3500);
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/blog.css">
+</head>
+<body>
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="../../index.html" class="nav-logo">
+            <span class="logo-icon">M</span>
+            MYTH
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../../index.html">首页</a></li>
+            <li><a href="../../index.html#about">关于</a></li>
+            <li><a href="../../index.html#repos">GitHub</a></li>
+            <li><a href="../../index.html#wechat">公众号</a></li>
+            <li><a href="../index.html" class="">博客</a></li>
+            <li><a href="../../index.html#contact">联系</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="菜单">
+            <span></span><span></span><span></span>
+        </button>
+        <button class="nav-theme-toggle" id="themeToggle" aria-label="切换主题">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="19.78" y1="4.22" x2="18.36" y2="5.64"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="container post-main">
+    <a class="back-link" href="../index.html">← 返回博客首页</a>
+    <article class="post-article">
+        <header class="post-header fade-up">
+            <div class="post-card-meta">
+                <time datetime="2026-11-05">2026 年 11 月 5 日</time>
+                <span class="tag">AI工具评测</span><span class="tag">真实记录</span>
+            </div>
+            <h1>用 Claude Code 搭个人博客生成器，踩坑比想象中少</h1>
+            <p class="post-lede">纯标准库撸了个零依赖静态博客生成器</p>
+        </header>
+        <div class="prose fade-up">
+<p>博客开了快一个月，一直想有个「丢一个 Markdown 进去就出网页」的东西，又不想引入 Hugo / Hexo 那套重依赖。最近用 Claude Code 把这个生成器撸出来了，零依赖、纯 Python 标准库，记一下真实体感。</p>
+<p>一开始也考虑过 Hugo，但 Windows 上装环境、配主题、改模板那一套太重——我这隐星 P15 主要跑 RTX4060 干别的，不想为个博客折腾 Go 工具链。我的需求其实很小：一个 <code>.md</code> 进去，自动出文章页、首页列表和 RSS。需求小，自己写反而最快。</p>
+<p>跟 Claude Code 说清楚三件事就成了：读 <code>blog/posts/<em>.md</code>，每篇从 front-matter 取 <code>title / date / slug / tags / summary / draft</code>；复用我站点现成的 CSS 变量和同一个 <code>localStorage</code> 主题键，保证暗色模式和主页完全一致；输出 <code>index.html</code>、<code>feed.xml</code> 和 <code>posts/</em>.html</code>。它给了一版 <code>build.py</code>，我边跑边改：<code>##</code> 被渲染成了三级标题、首屏淡入动画在后台标签页不触发、导航栏那条 <code>fixed</code> 规则把文章底部的「更早一篇」翻页浮空了……都是小坑，但它定位挺准，基本我说现象它就给补丁。</p>
+<p>最大的体感是：AI 写骨架很快，但「和现有站点风格统一」这种隐性约束，得我一句句喂。比如我强调「绝不能用 Markdown 表格，用逗号分隔对比」，它第一次还是忍不住画表，被我打回去重来。还有图片，我让它别加 <code>loading=lazy</code>，因为静态站图片就那么几张，懒加载反而让首屏空一块。</p>
+<p>顺手还把 RSS 接进了主页：首页现在用 <code>fetch</code> 读 <code>blog/feed.xml</code>，自动把最新文章拉成卡片，GitHub 的 star / repo 数也改成接口实时取。写文章这件事，从「想发→改三个文件→手摆首页」变成了「新建一个 <code>YYYY-MM-DD-slug.md</code>，填六行 front-matter，跑一下 <code>python3 build.py</code>，提交，推送」，完事。整个过程没装任何第三方包。</p>
+<p>对只想安安静静写点东西的人来说，这种「小到能全看懂」的生成器，比重型框架省心太多。代码量不大，但每一行我都认识，哪天想加个标签云或者归档页，自己改就行。</p>
+<p>下一篇打算写 Cursor 和 Trae 在国内网络下的体感对比——这俩我天天换着用，有些槽点不吐不快。</p>
+        </div>
+    </article>
+    <div class="post-nav"><a class="post-nav-link" href="woa-autobot-vision.html"><span>更新一篇</span><strong>WOA_AutoBot 是怎么用图像识别替我打理机场的</strong></a><a class="post-nav-link next" href="hello-blog.html"><span>更早一篇</span><strong>个人博客开张了：为什么我又给自己加了个静态站</strong></a></div>
+</main>
+<footer class="site-footer">
+    <div class="footer-inner">
+        <p>© 2026 MYTH · 用 Python 生成的静态博客</p>
+        <div class="footer-links">
+            <a href="../../index.html">首页</a>
+            <a href="../../index.html#repos">开源项目</a>
+            <a href="https://github.com/hjtr7mymht-dot" target="_blank" rel="noopener">GitHub</a>
+            <a href="../feed.xml">RSS</a>
+        </div>
+    </div>
+</footer>
+<script src="../assets/blog.js"></script>
+</body>
+</html>

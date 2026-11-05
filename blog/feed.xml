@@ -13,6 +13,13 @@
       <description>从截图、识图到点下去，一条完整的自动化链路是怎么搭的——状态机、模板匹配、同帧批匹配，以及为什么要这么做。</description>
     </item>
     <item>
+      <title>用 Claude Code 搭个人博客生成器，踩坑比想象中少</title>
+      <link>https://hjtr7mymht-dot.github.io/blog/posts/claude-code-blog-generator.html</link>
+      <guid>https://hjtr7mymht-dot.github.io/blog/posts/claude-code-blog-generator.html</guid>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 +0800</pubDate>
+      <description>纯标准库撸了个零依赖静态博客生成器</description>
+    </item>
+    <item>
       <title>个人博客开张了：为什么我又给自己加了个静态站</title>
       <link>https://hjtr7mymht-dot.github.io/blog/posts/hello-blog.html</link>
       <guid>https://hjtr7mymht-dot.github.io/blog/posts/hello-blog.html</guid>

@@ -1,9 +1,11 @@
+---
 title: 用 Claude Code 搭个人博客生成器，踩坑比想象中少
 date: 2026-11-05
 slug: claude-code-blog-generator
-tags: [AI工具评测, 真实记录]
+tags: AI工具评测, 真实记录
 summary: 纯标准库撸了个零依赖静态博客生成器
 draft: false
+---
 
 博客开了快一个月，一直想有个「丢一个 Markdown 进去就出网页」的东西，又不想引入 Hugo / Hexo 那套重依赖。最近用 Claude Code 把这个生成器撸出来了，零依赖、纯 Python 标准库，记一下真实体感。
 
