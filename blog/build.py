@@ -1,1 +1,392 @@
-IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiIKTVlUSCDljZrlrqLpnZnmgIHnlJ/miJDlmajvvIjpm7bkvp3otZbvvIznuq/moIflh4blupPvvIkKCueUqOazle+8mgogICAgcHl0aG9uMyBidWlsZC5weSAgICAgICAgICAgICMg6K+75Y+WIHBvc3RzLyoubWTvvIznlJ/miJAgaW5kZXguaHRtbCDkuI4gcG9zdHMvKi5odG1sCgrmlofnq6DmoLzlvI/vvIhwb3N0cy8yMDI2LTExLTA1LeaIkeeahOaWh+eroC5tZO+8ie+8mgogICAgLS0tCiAgICB0aXRsZTog5paH56ug5qCH6aKYCiAgICBkYXRlOiAyMDI2LTExLTA1CiAgICB0YWdzOiBQeXRob24sIOmaj+eslAogICAgc3VtbWFyeTog5LiA5Lik5Y+l6K+d55qE5pGY6KaB77yM5Lya5pi+56S65Zyo5Y2a5a6i6aaW6aG15Y2h54mH5LiKCiAgICBkcmFmdDogZmFsc2UgICAgICAgICAgIyDlhpkgdHJ1ZSDliJnkuI3lj5HluIMKICAgIC0tLQogICAg5q2j5paHIE1hcmtkb3duIC4uLgoK5pSv5oyB55qEIE1hcmtkb3duIOWtkOmbhu+8mgogICAgIyAvICMjIC8gIyMjIOagh+mimOOAgeauteiQveOAgeaXoOW6jy/mnInluo/liJfooajjgIE+IOW8leeUqOOAgWBgYCDku6PnoIHlnZfjgIEtLS0g5YiG5Ymy57q/CiAgICDooYzlhoXvvJpg5Luj56CBYCAqKuWKoOeylyoqICrmlpzkvZMqIFvpk77mjqVdKHVybCkgIVvlm77niYddKHNyYykKIiIiCmltcG9ydCBodG1sCmltcG9ydCBvcwppbXBvcnQgcmUKaW1wb3J0IHN5cwpmcm9tIGRhdGV0aW1lIGltcG9ydCBkYXRldGltZSwgdGltZXpvbmUsIHRpbWVkZWx0YQpmcm9tIHBhdGhsaWIgaW1wb3J0IFBhdGgKClJPT1QgPSBQYXRoKF9fZmlsZV9fKS5yZXNvbHZlKCkucGFyZW50ClBPU1RTX0RJUiA9IFJPT1QgLyAicG9zdHMiClNJVEVfVVJMID0gImh0dHBzOi8vaGp0cjdteW1odC1kb3QuZ2l0aHViLmlvIgpCTE9HX1VSTCA9IFNJVEVfVVJMICsgIi9ibG9nLyIKQ1NUID0gdGltZXpvbmUodGltZWRlbHRhKGhvdXJzPTgpKQoKCiMgLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSBmcm9udCBtYXR0ZXIKZGVmIHBhcnNlX2Zyb250X21hdHRlcih0ZXh0KToKICAgIG0gPSByZS5tYXRjaChyIlxzKi0tLVxuKC4qPylcbi0tLVxuKC4qKSIsIHRleHQsIHJlLlMpCiAgICBpZiBub3QgbToKICAgICAgICByZXR1cm4ge30sIHRleHQKICAgIG1ldGEgPSB7fQogICAgZm9yIGxpbmUgaW4gbS5ncm91cCgxKS5zcGxpdGxpbmVzKCk6CiAgICAgICAgaWYgIjoiIGluIGxpbmU6CiAgICAgICAgICAgIGssIHYgPSBsaW5lLnNwbGl0KCI6IiwgMSkKICAgICAgICAgICAgbWV0YVtrLnN0cmlwKCkubG93ZXIoKV0gPSB2LnN0cmlwKCkKICAgIHJldHVybiBtZXRhLCBtLmdyb3VwKDIpCgoKZGVmIGxvYWRfcG9zdHMoKToKICAgIHBvc3RzID0gW10KICAgIGZvciBmIGluIHNvcnRlZChQT1NUU19ESVIuZ2xvYigiKi5tZCIpKToKICAgICAgICBtZXRhLCBib2R5ID0gcGFyc2VfZnJvbnRfbWF0dGVyKGYucmVhZF90ZXh0KGVuY29kaW5nPSJ1dGYtOCIpKQogICAgICAgIGlmIG5vdCBtZXRhLmdldCgidGl0bGUiKSBvciBub3QgbWV0YS5nZXQoImRhdGUiKToKICAgICAgICAgICAgcHJpbnQoZiIgICEg6Lez6L+HIHtmLm5hbWV977ya57y65bCRIHRpdGxlL2RhdGUiKQogICAgICAgICAgICBjb250aW51ZQogICAgICAgIGlmIG1ldGEuZ2V0KCJkcmFmdCIsICIiKS5sb3dlcigpIGluICgidHJ1ZSIsICJ5ZXMiLCAiMSIpOgogICAgICAgICAgICBwcmludChmIiAgLSDot7Pov4cge2YubmFtZX3vvIjojYnnqL/vvIkiKQogICAgICAgICAgICBjb250aW51ZQogICAgICAgIGRhdGUgPSBtZXRhWyJkYXRlIl0KICAgICAgICBzbHVnID0gbWV0YS5nZXQoInNsdWciKSBvciByZS5zdWIociJeXGR7NH0tXGR7Mn0tXGR7Mn0tIiwgIiIsIGYuc3RlbSkKICAgICAgICB0cnk6CiAgICAgICAgICAgIHBhcnNlZF9kYXRlID0gZGF0ZXRpbWUuc3RycHRpbWUoZGF0ZSwgIiVZLSVtLSVkIikKICAgICAgICBleGNlcHQgVmFsdWVFcnJvcjoKICAgICAgICAgICAgcHJpbnQoZiIgICEg6Lez6L+HIHtmLm5hbWV977yaZGF0ZSDpnIDopoEgWVlZWS1NTS1ERCDmoLzlvI8iKQogICAgICAgICAgICBjb250aW51ZQogICAgICAgIHBvc3RzLmFwcGVuZCh7CiAgICAgICAgICAgICJ0aXRsZSI6IG1ldGFbInRpdGxlIl0sCiAgICAgICAgICAgICJkYXRlIjogZGF0ZSwKICAgICAgICAgICAgImRhdGVfb2JqIjogcGFyc2VkX2RhdGUsCiAgICAgICAgICAgICJ0YWdzIjogW3Quc3RyaXAoKSBmb3IgdCBpbiBtZXRhLmdldCgidGFncyIsICIiKS5zcGxpdCgiLCIpIGlmIHQuc3RyaXAoKV0sCiAgICAgICAgICAgICJzdW1tYXJ5IjogbWV0YS5nZXQoInN1bW1hcnkiLCAiIiksCiAgICAgICAgICAgICJzbHVnIjogc2x1ZywKICAgICAgICAgICAgInVybCI6IGYicG9zdHMve3NsdWd9Lmh0bWwiLAogICAgICAgICAgICAiYm9keSI6IGJvZHksCiAgICAgICAgICAgICJzb3VyY2UiOiBmLm5hbWUsCiAgICAgICAgfSkKICAgIHBvc3RzLnNvcnQoa2V5PWxhbWJkYSBwOiBwWyJkYXRlX29iaiJdLCByZXZlcnNlPVRydWUpCiAgICByZXR1cm4gcG9zdHMKCgojIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gbWFya2Rvd24KSU5MSU5FX1BBVFRFUk5TID0gWwogICAgKHJlLmNvbXBpbGUociIhXFsoW15cXV0qKVxdXCgoW14pXHNdKylcKSIpLAogICAgIGxhbWJkYSBtOiBmJzxpbWcgc3JjPSJ7bS5ncm91cCgyKX0iIGFsdD0ie2h0bWwuZXNjYXBlKG0uZ3JvdXAoMSkpfSI+JyksCiAgICAocmUuY29tcGlsZShyIlxbKFteXF1dKylcXVwoKFteKVxzXSspXCkiKSwKICAgICBsYW1iZGEgbTogZic8YSBocmVmPSJ7bS5ncm91cCgyKX0iIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIj57bS5ncm91cCgxKX08L2E+JyksCiAgICAocmUuY29tcGlsZShyIlwqXCooW14qXSspXCpcKiIpLCBsYW1iZGEgbTogZiI8c3Ryb25nPnttLmdyb3VwKDEpfTwvc3Ryb25nPiIpLAogICAgKHJlLmNvbXBpbGUociIoPzwhXCopXCooW14qXG5dKylcKig/IVwqKSIpLCBsYW1iZGEgbTogZiI8ZW0+e20uZ3JvdXAoMSl9PC9lbT4iKSwKICAgIChyZS5jb21waWxlKHIiYChbXmBdKylgIiksIGxhbWJkYSBtOiBmIjxjb2RlPnttLmdyb3VwKDEpfTwvY29kZT4iKSwKXQoKCmRlZiByZW5kZXJfaW5saW5lKHRleHQpOgogICAgdGV4dCA9IGh0bWwuZXNjYXBlKHRleHQsIHF1b3RlPUZhbHNlKQogICAgIyDovazkuYnkvJrmiorlj43lvJXlj7cv5pif5Y+3L+aWueaLrOWPt+S/neeVmeWOn+agt++8jOato+Wlvee7p+e7reWBmuihjOWGheabv+aNogogICAgZm9yIHBhdCwgcmVwbCBpbiBJTkxJTkVfUEFUVEVSTlM6CiAgICAgICAgdGV4dCA9IHBhdC5zdWIocmVwbCwgdGV4dCkKICAgIHJldHVybiB0ZXh0CgoKZGVmIHJlbmRlcl9saXN0KGxpbmVzLCBvcmRlcmVkKToKICAgIHRhZyA9ICJvbCIgaWYgb3JkZXJlZCBlbHNlICJ1bCIKICAgIGl0ZW1zID0gW10KICAgIGZvciBsbiBpbiBsaW5lczoKICAgICAgICBjb250ZW50ID0gcmUuc3ViKHIiXlxzKig/OlstKl18XGQrXC4pXHMrIiwgIiIsIGxuKQogICAgICAgIGl0ZW1zLmFwcGVuZChmIjxsaT57cmVuZGVyX2lubGluZShjb250ZW50KX08L2xpPiIpCiAgICByZXR1cm4gZiI8e3RhZ30+IiArICIiLmpvaW4oaXRlbXMpICsgZiI8L3t0YWd9PiIKCgpkZWYgcmVuZGVyX21hcmtkb3duKHNyYyk6CiAgICBsaW5lcyA9IHNyYy5yZXBsYWNlKCJcclxuIiwgIlxuIikuc3BsaXQoIlxuIikKICAgIG91dCwgaSA9IFtdLCAwCiAgICBuID0gbGVuKGxpbmVzKQoKICAgIHdoaWxlIGkgPCBuOgogICAgICAgIGxpbmUgPSBsaW5lc1tpXQoKICAgICAgICAjIOS7o+eggeWdlwogICAgICAgIG0gPSByZS5tYXRjaChyIlxzKmBgYChcdyopIiwgbGluZSkKICAgICAgICBpZiBtOgogICAgICAgICAgICBsYW5nID0gbS5ncm91cCgxKQogICAgICAgICAgICBpICs9IDEKICAgICAgICAgICAgYnVmID0gW10KICAgICAgICAgICAgd2hpbGUgaSA8IG4gYW5kIG5vdCByZS5tYXRjaChyIlxzKmBgYCIsIGxpbmVzW2ldKToKICAgICAgICAgICAgICAgIGJ1Zi5hcHBlbmQobGluZXNbaV0pCiAgICAgICAgICAgICAgICBpICs9IDEKICAgICAgICAgICAgaSArPSAxCiAgICAgICAgICAgIGNvZGUgPSBodG1sLmVzY2FwZSgiXG4iLmpvaW4oYnVmKSkKICAgICAgICAgICAgY2xzID0gZicgY2xhc3M9Imxhbmd1YWdlLXtsYW5nfSInIGlmIGxhbmcgZWxzZSAiIgogICAgICAgICAgICBvdXQuYXBwZW5kKGYiPHByZT48Y29kZXtjbHN9Pntjb2RlfTwvY29kZT48L3ByZT4iKQogICAgICAgICAgICBjb250aW51ZQoKICAgICAgICAjIOagh+mimAogICAgICAgIG0gPSByZS5tYXRjaChyIigjezEsNH0pXHMrKC4qKSIsIGxpbmUpCiAgICAgICAgaWYgbToKICAgICAgICAgICAgcmF3ID0gbGVuKG0uZ3JvdXAoMSkpCiAgICAgICAgICAgIGx2bCA9IDIgaWYgcmF3IDw9IDIgZWxzZSByYXcgICAjIOaWh+eroOagh+mimOW3suaYryBoMe+8jCMg5ZKMICMjIOmDvea4suafk+aIkCBoMgogICAgICAgICAgICBsdmwgPSBtaW4obHZsLCA0KQogICAgICAgICAgICB0ZXh0ID0gbS5ncm91cCgyKS5zdHJpcCgpCiAgICAgICAgICAgIGFuY2hvciA9IHJlLnN1YihyIlteXHdcdTRlMDAtXHU5ZmE1LV0iLCAiIiwgdGV4dC5yZXBsYWNlKCIgIiwgIi0iKS5sb3dlcigpKQogICAgICAgICAgICBvdXQuYXBwZW5kKGYnPGh7bHZsfSBpZD0ie2FuY2hvcn0iPntyZW5kZXJfaW5saW5lKHRleHQpfTwvaHtsdmx9PicpCiAgICAgICAgICAgIGkgKz0gMQogICAgICAgICAgICBjb250aW51ZQoKICAgICAgICAjIOWIhuWJsue6vwogICAgICAgIGlmIHJlLm1hdGNoKHIiXHMqLS0tK1xzKiQiLCBsaW5lKToKICAgICAgICAgICAgb3V0LmFwcGVuZCgiPGhyPiIpCiAgICAgICAgICAgIGkgKz0gMQogICAgICAgICAgICBjb250aW51ZQoKICAgICAgICAjIOW8leeUqAogICAgICAgIGlmIHJlLm1hdGNoKHIiXHMqPlxzPyIsIGxpbmUpOgogICAgICAgICAgICBidWYgPSBbXQogICAgICAgICAgICB3aGlsZSBpIDwgbiBhbmQgcmUubWF0Y2gociJccyo+XHM/IiwgbGluZXNbaV0pOgogICAgICAgICAgICAgICAgYnVmLmFwcGVuZChyZS5zdWIociJeXHMqPlxzPyIsICIiLCBsaW5lc1tpXSkpCiAgICAgICAgICAgICAgICBpICs9IDEKICAgICAgICAgICAgaW5uZXIgPSByZW5kZXJfbWFya2Rvd24oIlxuIi5qb2luKGJ1ZikpCiAgICAgICAgICAgIG91dC5hcHBlbmQoZiI8YmxvY2txdW90ZT57aW5uZXJ9PC9ibG9ja3F1b3RlPiIpCiAgICAgICAgICAgIGNvbnRpbnVlCgogICAgICAgICMg5YiX6KGoCiAgICAgICAgaWYgcmUubWF0Y2gociJccypbLSpdXHMrIiwgbGluZSkgb3IgcmUubWF0Y2gociJccypcZCtcLlxzKyIsIGxpbmUpOgogICAgICAgICAgICBvcmRlcmVkID0gYm9vbChyZS5tYXRjaChyIlxzKlxkK1wuXHMrIiwgbGluZSkpCiAgICAgICAgICAgIGJ1ZiA9IFtdCiAgICAgICAgICAgIHdoaWxlIGkgPCBuIGFuZCAocmUubWF0Y2gociJccypbLSpdXHMrIiwgbGluZXNbaV0pIG9yIHJlLm1hdGNoKHIiXHMqXGQrXC5ccysiLCBsaW5lc1tpXSkpOgogICAgICAgICAgICAgICAgYnVmLmFwcGVuZChsaW5lc1tpXSkKICAgICAgICAgICAgICAgIGkgKz0gMQogICAgICAgICAgICBvdXQuYXBwZW5kKHJlbmRlcl9saXN0KGJ1Ziwgb3JkZXJlZCkpCiAgICAgICAgICAgIGNvbnRpbnVlCgogICAgICAgICMg56m66KGMCiAgICAgICAgaWYgbm90IGxpbmUuc3RyaXAoKToKICAgICAgICAgICAgaSArPSAxCiAgICAgICAgICAgIGNvbnRpbnVlCgogICAgICAgICMg5q616JC977yI6L+e57ut6Z2e56m66KGM77yJCiAgICAgICAgYnVmID0gW10KICAgICAgICB3aGlsZSBpIDwgbiBhbmQgbGluZXNbaV0uc3RyaXAoKSBhbmQgbm90IHJlLm1hdGNoKAogICAgICAgICAgICByIlxzKihgYGB8I3sxLDR9XHN8Wy0qXVxzfFxkK1wuXHN8PikiLCBsaW5lc1tpXQogICAgICAgICk6CiAgICAgICAgICAgIGJ1Zi5hcHBlbmQobGluZXNbaV0pCiAgICAgICAgICAgIGkgKz0gMQogICAgICAgIG91dC5hcHBlbmQoZiI8cD57cmVuZGVyX2lubGluZSgnICcuam9pbihsLnN0cmlwKCkgZm9yIGwgaW4gYnVmKSl9PC9wPiIpCgogICAgcmV0dXJuICJcbiIuam9pbihvdXQpCgoKIyAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIHRlbXBsYXRlcwpkZWYgcGFnZV9oZWFkKHRpdGxlLCBkZXNjcmlwdGlvbiwgZGVwdGgsIHBhZ2VfdXJsKToKICAgICMgZGVwdGg6IOmhtemdouebuOWvuSBibG9nLyDmoLnnmoTlsYLnuqfvvIhpbmRleD0w77yMcG9zdHMveHh4PTHvvIkKICAgIGJsb2dfdXAgPSAiLi4vIiAqIGRlcHRoICAgICAjIOebuOWvuSBibG9nIOaguQogICAgc2l0ZV91cCA9IGJsb2dfdXAgKyAiLi4vIiAgICMg55u45a+556uZ54K55qC577yIaW5kZXguaHRtbCDmiYDlnKjvvIkKICAgIHJldHVybiBmIiIiPCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9InpoLUNOIj4KPGhlYWQ+CiAgICA8bWV0YSBjaGFyc2V0PSJVVEYtOCI+CiAgICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMCI+CiAgICA8dGl0bGU+e2h0bWwuZXNjYXBlKHRpdGxlKX08L3RpdGxlPgogICAgPG1ldGEgbmFtZT0iZGVzY3JpcHRpb24iIGNvbnRlbnQ9IntodG1sLmVzY2FwZShkZXNjcmlwdGlvbil9Ij4KICAgIDxtZXRhIHByb3BlcnR5PSJvZzp0aXRsZSIgY29udGVudD0ie2h0bWwuZXNjYXBlKHRpdGxlKX0iPgogICAgPG1ldGEgcHJvcGVydHk9Im9nOmRlc2NyaXB0aW9uIiBjb250ZW50PSJ7aHRtbC5lc2NhcGUoZGVzY3JpcHRpb24pfSI+CiAgICA8bWV0YSBwcm9wZXJ0eT0ib2c6dHlwZSIgY29udGVudD0id2Vic2l0ZSI+CiAgICA8bWV0YSBwcm9wZXJ0eT0ib2c6dXJsIiBjb250ZW50PSJ7cGFnZV91cmx9Ij4KICAgIDxsaW5rIHJlbD0iYWx0ZXJuYXRlIiB0eXBlPSJhcHBsaWNhdGlvbi9yc3MreG1sIiB0aXRsZT0iTVlUSCDnmoTljZrlrqIiIGhyZWY9IntibG9nX3VwfWZlZWQueG1sIj4KICAgIDxsaW5rIHJlbD0icHJlY29ubmVjdCIgaHJlZj0iaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbSI+CiAgICA8bGluayByZWw9InByZWNvbm5lY3QiIGhyZWY9Imh0dHBzOi8vZm9udHMuZ3N0YXRpYy5jb20iIGNyb3Nzb3JpZ2luPgogICAgPGxpbmsgaHJlZj0iaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3MyP2ZhbWlseT1JbnRlcjp3Z2h0QDMwMDs0MDA7NTAwOzYwMDs3MDA7ODAwOzkwMCZmYW1pbHk9SmV0QnJhaW5zK01vbm86d2dodEA0MDA7NTAwOzYwMCZkaXNwbGF5PXN3YXAiIHJlbD0ic3R5bGVzaGVldCI+CiAgICA8c2NyaXB0PgogICAgICAgIChmdW5jdGlvbiAoKSB7ewogICAgICAgICAgICB2YXIgdCA9IGxvY2FsU3RvcmFnZS5nZXRJdGVtKCd0aGVtZScpOwogICAgICAgICAgICBpZiAoIXQpIHQgPSB3aW5kb3cubWF0Y2hNZWRpYSgnKHByZWZlcnMtY29sb3Itc2NoZW1lOiBkYXJrKScpLm1hdGNoZXMgPyAnZGFyaycgOiAnbGlnaHQnOwogICAgICAgICAgICBkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQuc2V0QXR0cmlidXRlKCdkYXRhLXRoZW1lJywgdCk7CiAgICAgICAgICAgIC8vIOWFpeWcuuWKqOeUu+WPquWcqCBKUyDlj6/nlKjml7bnlJ/mlYjvvJtibG9nLmpzIOayoei3kei1t+adpeWwsSAzLjUg56eS5ZCO6Ieq5Yqo5Y+W5raI6ZqQ6JePCiAgICAgICAgICAgIGRvY3VtZW50LmRvY3VtZW50RWxlbWVudC5jbGFzc0xpc3QuYWRkKCdqcy1hbmltJyk7CiAgICAgICAgICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gKCkge3sKICAgICAgICAgICAgICAgIGlmICghd2luZG93Ll9fYmxvZ1JlYWR5KSBkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQuY2xhc3NMaXN0LnJlbW92ZSgnanMtYW5pbScpOwogICAgICAgICAgICB9fSwgMzUwMCk7CiAgICAgICAgfX0pKCk7CiAgICA8L3NjcmlwdD4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0ie2Jsb2dfdXB9YXNzZXRzL2Jsb2cuY3NzIj4KPC9oZWFkPgo8Ym9keT4KPG5hdiBpZD0ibmF2YmFyIj4KICAgIDxkaXYgY2xhc3M9Im5hdi1pbm5lciI+CiAgICAgICAgPGEgaHJlZj0ie3NpdGVfdXB9aW5kZXguaHRtbCIgY2xhc3M9Im5hdi1sb2dvIj4KICAgICAgICAgICAgPHNwYW4gY2xhc3M9ImxvZ28taWNvbiI+TTwvc3Bhbj4KICAgICAgICAgICAgTVlUSAogICAgICAgIDwvYT4KICAgICAgICA8dWwgY2xhc3M9Im5hdi1saW5rcyIgaWQ9Im5hdkxpbmtzIj4KICAgICAgICAgICAgPGxpPjxhIGhyZWY9IntzaXRlX3VwfWluZGV4Lmh0bWwiPummlumhtTwvYT48L2xpPgogICAgICAgICAgICA8bGk+PGEgaHJlZj0ie3NpdGVfdXB9aW5kZXguaHRtbCNhYm91dCI+5YWz5LqOPC9hPjwvbGk+CiAgICAgICAgICAgIDxsaT48YSBocmVmPSJ7c2l0ZV91cH1pbmRleC5odG1sI3JlcG9zIj5HaXRIdWI8L2E+PC9saT4KICAgICAgICAgICAgPGxpPjxhIGhyZWY9IntzaXRlX3VwfWluZGV4Lmh0bWwjd2VjaGF0Ij7lhazkvJflj7c8L2E+PC9saT4KICAgICAgICAgICAgPGxpPjxhIGhyZWY9IntibG9nX3VwfWluZGV4Lmh0bWwiIGNsYXNzPSJ7J2FjdGl2ZScgaWYgZGVwdGggPT0gMCBlbHNlICcnfSI+5Y2a5a6iPC9hPjwvbGk+CiAgICAgICAgICAgIDxsaT48YSBocmVmPSJ7c2l0ZV91cH1pbmRleC5odG1sI2NvbnRhY3QiPuiBlOezuzwvYT48L2xpPgogICAgICAgIDwvdWw+CiAgICAgICAgPGJ1dHRvbiBjbGFzcz0ibmF2LXRvZ2dsZSIgaWQ9Im5hdlRvZ2dsZSIgYXJpYS1sYWJlbD0i6I+c5Y2VIj4KICAgICAgICAgICAgPHNwYW4+PC9zcGFuPjxzcGFuPjwvc3Bhbj48c3Bhbj48L3NwYW4+CiAgICAgICAgPC9idXR0b24+CiAgICAgICAgPGJ1dHRvbiBjbGFzcz0ibmF2LXRoZW1lLXRvZ2dsZSIgaWQ9InRoZW1lVG9nZ2xlIiBhcmlhLWxhYmVsPSLliIfmjaLkuLvpopgiPgogICAgICAgICAgICA8c3ZnIGNsYXNzPSJtb29uLWljb24iIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZT0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJNMjEgMTIuNzlBOSA5IDAgMSAxIDExLjIxIDMgNyA3IDAgMCAwIDIxIDEyLjc5eiIvPjwvc3ZnPgogICAgICAgICAgICA8c3ZnIGNsYXNzPSJzdW4taWNvbiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTIiIHI9IjUiLz48bGluZSB4MT0iMTIiIHkxPSIxIiB4Mj0iMTIiIHkyPSIzIi8+PGxpbmUgeDE9IjQuMjIiIHkxPSI0LjIyIiB4Mj0iNS42NCIgeTI9IjUuNjQiLz48bGluZSB4MT0iMTguMzYiIHkxPSIxOC4zNiIgeDI9IjE5Ljc4IiB5Mj0iMTkuNzgiLz48bGluZSB4MT0iMSIgeTE9IjEyIiB4Mj0iMyIgeTI9IjEyIi8+PGxpbmUgeDE9IjIxIiB5MT0iMTIiIHgyPSIyMyIgeTI9IjEyIi8+PGxpbmUgeDE9IjE5Ljc4IiB5MT0iNC4yMiIgeDI9IjE4LjM2IiB5Mj0iNS42NCIvPjxsaW5lIHgxPSI0LjIyIiB5MT0iMTkuNzgiIHgyPSI1LjY0IiB5Mj0iMTguMzYiLz48L3N2Zz4KICAgICAgICA8L2J1dHRvbj4KICAgIDwvZGl2Pgo8L25hdj4KIiIiCgoKZGVmIHBhZ2VfZm9vdChkZXB0aCk6CiAgICBibG9nX3VwID0gIi4uLyIgKiBkZXB0aAogICAgc2l0ZV91cCA9IGJsb2dfdXAgKyAiLi4vIgogICAgcmV0dXJuIGYiIiI8Zm9vdGVyIGNsYXNzPSJzaXRlLWZvb3RlciI+CiAgICA8ZGl2IGNsYXNzPSJmb290ZXItaW5uZXIiPgogICAgICAgIDxwPsKpIDIwMjYgTVlUSCDCtyDnlKggUHl0aG9uIOeUn+aIkOeahOmdmeaAgeWNmuWuojwvcD4KICAgICAgICA8ZGl2IGNsYXNzPSJmb290ZXItbGlua3MiPgogICAgICAgICAgICA8YSBocmVmPSJ7c2l0ZV91cH1pbmRleC5odG1sIj7pppbpobU8L2E+CiAgICAgICAgICAgIDxhIGhyZWY9IntzaXRlX3VwfWluZGV4Lmh0bWwjcmVwb3MiPuW8gOa6kOmhueebrjwvYT4KICAgICAgICAgICAgPGEgaHJlZj0iaHR0cHM6Ly9naXRodWIuY29tL2hqdHI3bXltaHQtZG90IiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciI+R2l0SHViPC9hPgogICAgICAgICAgICA8YSBocmVmPSJ7YmxvZ191cH1mZWVkLnhtbCI+UlNTPC9hPgogICAgICAgIDwvZGl2PgogICAgPC9kaXY+CjwvZm9vdGVyPgo8c2NyaXB0IHNyYz0ie2Jsb2dfdXB9YXNzZXRzL2Jsb2cuanMiPjwvc2NyaXB0Pgo8L2JvZHk+CjwvaHRtbD4KIiIiCgoKZGVmIGJ1aWxkX2luZGV4KHBvc3RzKToKICAgIGNhcmRzID0gW10KICAgIGZvciBwIGluIHBvc3RzOgogICAgICAgIHRhZ3MgPSAiIi5qb2luKGYnPHNwYW4gY2xhc3M9InRhZyI+e3R9PC9zcGFuPicgZm9yIHQgaW4gcFsidGFncyJdKQogICAgICAgIHksIG0sIGQgPSBwWyJkYXRlIl0uc3BsaXQoIi0iKSBpZiBsZW4ocFsiZGF0ZSJdLnNwbGl0KCItIikpID09IDMgZWxzZSAoIiIsICIiLCAiIikKICAgICAgICBjYXJkID0gZiIiIiAgICAgICAgPGFydGljbGUgY2xhc3M9InBvc3QtY2FyZCBmYWRlLXVwIj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0icG9zdC1jYXJkLW1ldGEiPgogICAgICAgICAgICAgICAgPHRpbWUgZGF0ZXRpbWU9IntwWydkYXRlJ119Ij57eX0g5bm0IHtpbnQobSl9IOaciCB7aW50KGQpfSDml6U8L3RpbWU+CiAgICAgICAgICAgICAgICB7dGFnc30KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxoMiBjbGFzcz0icG9zdC1jYXJkLXRpdGxlIj48YSBocmVmPSJ7cFsndXJsJ119Ij57aHRtbC5lc2NhcGUocFsndGl0bGUnXSl9PC9hPjwvaDI+CiAgICAgICAgICAgIDxwIGNsYXNzPSJwb3N0LWNhcmQtc3VtbWFyeSI+e2h0bWwuZXNjYXBlKHBbJ3N1bW1hcnknXSl9PC9wPgogICAgICAgICAgICA8YSBjbGFzcz0icG9zdC1jYXJkLW1vcmUiIGhyZWY9IntwWyd1cmwnXX0iPumYheivu+WFqOaWhyA8c3Bhbj7ihpI8L3NwYW4+PC9hPgogICAgICAgIDwvYXJ0aWNsZT4iIiIKICAgICAgICBjYXJkcy5hcHBlbmQoY2FyZCkKCiAgICBib2R5ID0gZiIiIjxtYWluIGNsYXNzPSJjb250YWluZXIgYmxvZy1tYWluIj4KICAgIDxoZWFkZXIgY2xhc3M9ImJsb2ctaGVhZGVyIGZhZGUtdXAiPgogICAgICAgIDxkaXYgY2xhc3M9InNlY3Rpb24tbGFiZWwiPkJsb2c8L2Rpdj4KICAgICAgICA8aDEgY2xhc3M9InNlY3Rpb24tdGl0bGUiPk1ZVEgg55qE5Y2a5a6iPC9oMT4KICAgICAgICA8cCBjbGFzcz0ic2VjdGlvbi1kZXNjIj7lhpnngrnlhL/lgZrkuJzopb/ov4fnqIvkuK3nmoTnnJ/lrp7orrDlvZXvvJpBSSDlt6Xlhbfmi4bop6PjgIFQeXRob24g6Ieq5Yqo5YyW44CB54mp6IGU572R5a6e6Le144CC5LiN6L+954Ot54K577yM5Y+q5YaZ6Ieq5bex5Yqo5omL6aqM6K+B6L+H55qE44CCPC9wPgogICAgPC9oZWFkZXI+CiAgICA8ZGl2IGNsYXNzPSJwb3N0LWxpc3QiPgp7Y2hyKDEwKS5qb2luKGNhcmRzKX0KICAgIDwvZGl2PgogICAgPHAgY2xhc3M9ImZlZWQtaGludCBmYWRlLXVwIj7orqLpmIXmm7TmlrDvvJo8YSBocmVmPSJmZWVkLnhtbCI+UlNTIEZlZWQ8L2E+PC9wPgo8L21haW4+CiIiIgogICAgaGVhZCA9IHBhZ2VfaGVhZCgKICAgICAgICAiTVlUSCDnmoTljZrlrqIgfCBBSSDkuqflk4Egw5cgUHl0aG9uIOiHquWKqOWMliIsCiAgICAgICAgIk1ZVEgg55qE5Liq5Lq65Y2a5a6i77yaQUkg5bel5YW35ouG6Kej44CBUHl0aG9uIOiHquWKqOWMluS4jueJqeiBlOe9keWunui3teeahOecn+WunuiusOW9leOAgiIsCiAgICAgICAgMCwKICAgICAgICBCTE9HX1VSTCwKICAgICkKICAgIChST09UIC8gImluZGV4Lmh0bWwiKS53cml0ZV90ZXh0KGhlYWQgKyBib2R5ICsgcGFnZV9mb290KDApLCBlbmNvZGluZz0idXRmLTgiKQogICAgcHJpbnQoZiIgIOKckyBpbmRleC5odG1s77yIe2xlbihwb3N0cyl9IOevh+aWh+eroO+8iSIpCgoKZGVmIGJ1aWxkX3Bvc3QocCwgcHJldl9wb3N0LCBuZXh0X3Bvc3QpOgogICAgY29udGVudCA9IHJlbmRlcl9tYXJrZG93bihwWyJib2R5Il0pCiAgICB0YWdzID0gIiIuam9pbihmJzxzcGFuIGNsYXNzPSJ0YWciPnt0fTwvc3Bhbj4nIGZvciB0IGluIHBbInRhZ3MiXSkKICAgIHksIG0sIGQgPSBwWyJkYXRlIl0uc3BsaXQoIi0iKQoKICAgIG5hdl9odG1sID0gIiIKICAgIGlmIG5leHRfcG9zdDogICMg5YiX6KGo5pu06Z2g5YmNID0g5pu05paw55qE5LiA56+HCiAgICAgICAgbl91cmwgPSBQYXRoKG5leHRfcG9zdFsidXJsIl0pLm5hbWUKICAgICAgICBuYXZfaHRtbCArPSBmJzxhIGNsYXNzPSJwb3N0LW5hdi1saW5rIiBocmVmPSJ7bl91cmx9Ij48c3Bhbj7mm7TmlrDkuIDnr4c8L3NwYW4+PHN0cm9uZz57aHRtbC5lc2NhcGUobmV4dF9wb3N0WyJ0aXRsZSJdKX08L3N0cm9uZz48L2E+JwogICAgaWYgcHJldl9wb3N0OiAgIyDliJfooajmm7TpnaDlkI4gPSDmm7Tml6nnmoTkuIDnr4cKICAgICAgICBwX3VybCA9IFBhdGgocHJldl9wb3N0WyJ1cmwiXSkubmFtZQogICAgICAgIG5hdl9odG1sICs9IGYnPGEgY2xhc3M9InBvc3QtbmF2LWxpbmsgbmV4dCIgaHJlZj0ie3BfdXJsfSI+PHNwYW4+5pu05pep5LiA56+HPC9zcGFuPjxzdHJvbmc+e2h0bWwuZXNjYXBlKHByZXZfcG9zdFsidGl0bGUiXSl9PC9zdHJvbmc+PC9hPicKCiAgICBib2R5ID0gZiIiIjxtYWluIGNsYXNzPSJjb250YWluZXIgcG9zdC1tYWluIj4KICAgIDxhIGNsYXNzPSJiYWNrLWxpbmsiIGhyZWY9Ii4uL2luZGV4Lmh0bWwiPuKGkCDov5Tlm57ljZrlrqLpppbpobU8L2E+CiAgICA8YXJ0aWNsZSBjbGFzcz0icG9zdC1hcnRpY2xlIj4KICAgICAgICA8aGVhZGVyIGNsYXNzPSJwb3N0LWhlYWRlciBmYWRlLXVwIj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0icG9zdC1jYXJkLW1ldGEiPgogICAgICAgICAgICAgICAgPHRpbWUgZGF0ZXRpbWU9IntwWydkYXRlJ119Ij57eX0g5bm0IHtpbnQobSl9IOaciCB7aW50KGQpfSDml6U8L3RpbWU+CiAgICAgICAgICAgICAgICB7dGFnc30KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxoMT57aHRtbC5lc2NhcGUocFsndGl0bGUnXSl9PC9oMT4KICAgICAgICAgICAgPHAgY2xhc3M9InBvc3QtbGVkZSI+e2h0bWwuZXNjYXBlKHBbJ3N1bW1hcnknXSl9PC9wPgogICAgICAgIDwvaGVhZGVyPgogICAgICAgIDxkaXYgY2xhc3M9InByb3NlIGZhZGUtdXAiPgp7Y29udGVudH0KICAgICAgICA8L2Rpdj4KICAgIDwvYXJ0aWNsZT4KICAgIHtmJzxkaXYgY2xhc3M9InBvc3QtbmF2Ij57bmF2X2h0bWx9PC9kaXY+JyBpZiBuYXZfaHRtbCBlbHNlICcnfQo8L21haW4+CiIiIgogICAgaGVhZCA9IHBhZ2VfaGVhZCgKICAgICAgICBmIntwWyd0aXRsZSddfSB8IE1ZVEgg55qE5Y2a5a6iIiwKICAgICAgICBwWyJzdW1tYXJ5Il0gb3IgcFsidGl0bGUiXSwKICAgICAgICAxLAogICAgICAgIEJMT0dfVVJMICsgcFsidXJsIl0sCiAgICApCiAgICBvdXQgPSBST09UIC8gInBvc3RzIiAvIGYie3BbJ3NsdWcnXX0uaHRtbCIKICAgIG91dC53cml0ZV90ZXh0KGhlYWQgKyBib2R5ICsgcGFnZV9mb290KDEpLCBlbmNvZGluZz0idXRmLTgiKQogICAgcHJpbnQoZiIgIOKckyBwb3N0cy97b3V0Lm5hbWV9IikKCgpkZWYgYnVpbGRfZmVlZChwb3N0cyk6CiAgICBpdGVtcyA9IFtdCiAgICBmb3IgcCBpbiBwb3N0c1s6MjBdOgogICAgICAgIGxpbmsgPSBCTE9HX1VSTCArIHBbInVybCJdCiAgICAgICAgZGVzYyA9IGh0bWwuZXNjYXBlKHBbInN1bW1hcnkiXSBvciBwWyJ0aXRsZSJdKQogICAgICAgIGl0ZW1zLmFwcGVuZChmIiIiICAgIDxpdGVtPgogICAgICA8dGl0bGU+e2h0bWwuZXNjYXBlKHBbJ3RpdGxlJ10pfTwvdGl0bGU+CiAgICAgIDxsaW5rPntsaW5rfTwvbGluaz4KICAgICAgPGd1aWQ+e2xpbmt9PC9ndWlkPgogICAgICA8cHViRGF0ZT57cFsnZGF0ZV9vYmonXS5yZXBsYWNlKHR6aW5mbz1DU1QpLnN0cmZ0aW1lKCclYSwgJWQgJWIgJVkgJUg6JU06JVMgKzA4MDAnKX08L3B1YkRhdGU+CiAgICAgIDxkZXNjcmlwdGlvbj57ZGVzY308L2Rlc2NyaXB0aW9uPgogICAgPC9pdGVtPiIiIikKICAgIHhtbCA9IGYiIiI8P3htbCB2ZXJzaW9uPSIxLjAiIGVuY29kaW5nPSJVVEYtOCI/Pgo8cnNzIHZlcnNpb249IjIuMCI+CiAgPGNoYW5uZWw+CiAgICA8dGl0bGU+TVlUSCDnmoTljZrlrqI8L3RpdGxlPgogICAgPGxpbms+e0JMT0dfVVJMfTwvbGluaz4KICAgIDxkZXNjcmlwdGlvbj5BSSDlt6Xlhbfmi4bop6PjgIFQeXRob24g6Ieq5Yqo5YyW5LiO54mp6IGU572R5a6e6Le155qE55yf5a6e6K6w5b2V44CCPC9kZXNjcmlwdGlvbj4KICAgIDxsYW5ndWFnZT56aC1jbjwvbGFuZ3VhZ2U+CntjaHIoMTApLmpvaW4oaXRlbXMpfQogIDwvY2hhbm5lbD4KPC9yc3M+CiIiIgogICAgKFJPT1QgLyAiZmVlZC54bWwiKS53cml0ZV90ZXh0KHhtbCwgZW5jb2Rpbmc9InV0Zi04IikKICAgIHByaW50KCIgIOKckyBmZWVkLnhtbCIpCgoKZGVmIG1haW4oKToKICAgIHByaW50KCLmnoTlu7rljZrlrqLigKYiKQogICAgcG9zdHMgPSBsb2FkX3Bvc3RzKCkKICAgIGlmIG5vdCBwb3N0czoKICAgICAgICBwcmludCgiICDmsqHmnInmib7liLDmlofnq6DvvIxwb3N0cy8g55uu5b2V5piv56m655qE77yfIikKICAgICAgICBzeXMuZXhpdCgxKQogICAgYnVpbGRfaW5kZXgocG9zdHMpCiAgICBmb3IgaWR4LCBwIGluIGVudW1lcmF0ZShwb3N0cyk6CiAgICAgICAgbmV3ZXIgPSBwb3N0c1tpZHggLSAxXSBpZiBpZHggPiAwIGVsc2UgTm9uZSAgICMg5YiX6KGo5YCS5bqP77yMaWR4LTEg5piv5pu05paw55qE5LiA56+HCiAgICAgICAgb2xkZXIgPSBwb3N0c1tpZHggKyAxXSBpZiBpZHggPCBsZW4ocG9zdHMpIC0gMSBlbHNlIE5vbmUKICAgICAgICBidWlsZF9wb3N0KHAsIHByZXZfcG9zdD1vbGRlciwgbmV4dF9wb3N0PW5ld2VyKQogICAgYnVpbGRfZmVlZChwb3N0cykKICAgIHByaW50KGYi5a6M5oiQ77yae2xlbihwb3N0cyl9IOevh+aWh+eroCIpCgoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIG1haW4oKQo=
+#!/usr/bin/env python3
+"""
+MYTH 博客静态生成器（零依赖，纯标准库）
+
+用法：
+    python3 build.py            # 读取 posts/*.md，生成 index.html 与 posts/*.html
+
+文章格式（posts/2026-11-05-我的文章.md）：
+    ---
+    title: 文章标题
+    date: 2026-11-05
+    tags: Python, 随笔
+    summary: 一两句话的摘要，会显示在博客首页卡片上
+    draft: false          # 写 true 则不发布
+    ---
+    正文 Markdown ...
+
+支持的 Markdown 子集：
+    # / ## / ### 标题、段落、无序/有序列表、> 引用、``` 代码块、--- 分割线
+    行内：`代码` **加粗** *斜体* [链接](url) ![图片](src)
+"""
+import html
+import os
+import re
+import sys
+from datetime import datetime, timezone, timedelta
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+POSTS_DIR = ROOT / "posts"
+SITE_URL = "https://hjtr7mymht-dot.github.io"
+BLOG_URL = SITE_URL + "/blog/"
+CST = timezone(timedelta(hours=8))
+
+
+# ---------------------------------------------------------------- front matter
+def parse_front_matter(text):
+    m = re.match(r"\s*---\n(.*?)\n---\n(.*)", text, re.S)
+    if not m:
+        return {}, text
+    meta = {}
+    for line in m.group(1).splitlines():
+        if ":" in line:
+            k, v = line.split(":", 1)
+            meta[k.strip().lower()] = v.strip()
+    return meta, m.group(2)
+
+
+def load_posts():
+    posts = []
+    for f in sorted(POSTS_DIR.glob("*.md")):
+        meta, body = parse_front_matter(f.read_text(encoding="utf-8"))
+        if not meta.get("title") or not meta.get("date"):
+            print(f"  ! 跳过 {f.name}：缺少 title/date")
+            continue
+        if meta.get("draft", "").lower() in ("true", "yes", "1"):
+            print(f"  - 跳过 {f.name}（草稿）")
+            continue
+        date = meta["date"]
+        slug = meta.get("slug") or re.sub(r"^\d{4}-\d{2}-\d{2}-", "", f.stem)
+        try:
+            parsed_date = datetime.strptime(date, "%Y-%m-%d")
+        except ValueError:
+            print(f"  ! 跳过 {f.name}：date 需要 YYYY-MM-DD 格式")
+            continue
+        posts.append({
+            "title": meta["title"],
+            "date": date,
+            "date_obj": parsed_date,
+            "tags": [t.strip() for t in meta.get("tags", "").split(",") if t.strip()],
+            "summary": meta.get("summary", ""),
+            "slug": slug,
+            "url": f"posts/{slug}.html",
+            "body": body,
+            "source": f.name,
+        })
+    posts.sort(key=lambda p: p["date_obj"], reverse=True)
+    return posts
+
+
+# ---------------------------------------------------------------- markdown
+INLINE_PATTERNS = [
+    (re.compile(r"!\[([^\]]*)\]\(([^)\s]+)\)"),
+     lambda m: f'<img src="{m.group(2)}" alt="{html.escape(m.group(1))}">'),
+    (re.compile(r"\[([^\]]+)\]\(([^)\s]+)\)"),
+     lambda m: f'<a href="{m.group(2)}" target="_blank" rel="noopener">{m.group(1)}</a>'),
+    (re.compile(r"\*\*([^*]+)\*\*"), lambda m: f"<strong>{m.group(1)}</strong>"),
+    (re.compile(r"(?<!\*)\*([^*\n]+)\*(?!\*)"), lambda m: f"<em>{m.group(1)}</em>"),
+    (re.compile(r"`([^`]+)`"), lambda m: f"<code>{m.group(1)}</code>"),
+]
+
+
+def render_inline(text):
+    text = html.escape(text, quote=False)
+    # 转义会把反引号/星号/方括号保留原样，正好继续做行内替换
+    for pat, repl in INLINE_PATTERNS:
+        text = pat.sub(repl, text)
+    return text
+
+
+def render_list(lines, ordered):
+    tag = "ol" if ordered else "ul"
+    items = []
+    for ln in lines:
+        content = re.sub(r"^\s*(?:[-*]|\d+\.)\s+", "", ln)
+        items.append(f"<li>{render_inline(content)}</li>")
+    return f"<{tag}>" + "".join(items) + f"</{tag}>"
+
+
+def render_markdown(src):
+    lines = src.replace("\r\n", "\n").split("\n")
+    out, i = [], 0
+    n = len(lines)
+
+    while i < n:
+        line = lines[i]
+
+        # 代码块
+        m = re.match(r"\s*```(\w*)", line)
+        if m:
+            lang = m.group(1)
+            i += 1
+            buf = []
+            while i < n and not re.match(r"\s*```", lines[i]):
+                buf.append(lines[i])
+                i += 1
+            i += 1
+            code = html.escape("\n".join(buf))
+            cls = f' class="language-{lang}"' if lang else ""
+            out.append(f"<pre><code{cls}>{code}</code></pre>")
+            continue
+
+        # 标题
+        m = re.match(r"(#{1,4})\s+(.*)", line)
+        if m:
+            raw = len(m.group(1))
+            lvl = 2 if raw <= 2 else raw   # 文章标题已是 h1，# 和 ## 都渲染成 h2
+            lvl = min(lvl, 4)
+            text = m.group(2).strip()
+            anchor = re.sub(r"[^\w\u4e00-\u9fa5-]", "", text.replace(" ", "-").lower())
+            out.append(f'<h{lvl} id="{anchor}">{render_inline(text)}</h{lvl}>')
+            i += 1
+            continue
+
+        # 分割线
+        if re.match(r"\s*---+\s*$", line):
+            out.append("<hr>")
+            i += 1
+            continue
+
+        # 引用
+        if re.match(r"\s*>\s?", line):
+            buf = []
+            while i < n and re.match(r"\s*>\s?", lines[i]):
+                buf.append(re.sub(r"^\s*>\s?", "", lines[i]))
+                i += 1
+            inner = render_markdown("\n".join(buf))
+            out.append(f"<blockquote>{inner}</blockquote>")
+            continue
+
+        # 列表
+        if re.match(r"\s*[-*]\s+", line) or re.match(r"\s*\d+\.\s+", line):
+            ordered = bool(re.match(r"\s*\d+\.\s+", line))
+            buf = []
+            while i < n and (re.match(r"\s*[-*]\s+", lines[i]) or re.match(r"\s*\d+\.\s+", lines[i])):
+                buf.append(lines[i])
+                i += 1
+            out.append(render_list(buf, ordered))
+            continue
+
+        # 空行
+        if not line.strip():
+            i += 1
+            continue
+
+        # 段落（连续非空行）
+        buf = []
+        while i < n and lines[i].strip() and not re.match(
+            r"\s*(```|#{1,4}\s|[-*]\s|\d+\.\s|>)", lines[i]
+        ):
+            buf.append(lines[i])
+            i += 1
+        out.append(f"<p>{render_inline(' '.join(l.strip() for l in buf))}</p>")
+
+    return "\n".join(out)
+
+
+# ---------------------------------------------------------------- templates
+def page_head(title, description, depth, page_url):
+    # depth: 页面相对 blog/ 根的层级（index=0，posts/xxx=1）
+    blog_up = "../" * depth     # 相对 blog 根
+    site_up = blog_up + "../"   # 相对站点根（index.html 所在）
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{html.escape(title)}</title>
+    <meta name="description" content="{html.escape(description)}">
+    <meta property="og:title" content="{html.escape(title)}">
+    <meta property="og:description" content="{html.escape(description)}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{page_url}">
+    <link rel="alternate" type="application/rss+xml" title="MYTH 的博客" href="{blog_up}feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        (function () {{
+            var t = localStorage.getItem('theme');
+            if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', t);
+            // 入场动画只在 JS 可用时生效；blog.js 没跑起来就 3.5 秒后自动取消隐藏
+            document.documentElement.classList.add('js-anim');
+            setTimeout(function () {{
+                if (!window.__blogReady) document.documentElement.classList.remove('js-anim');
+            }}, 3500);
+        }})();
+    </script>
+    <link rel="stylesheet" href="{blog_up}assets/blog.css">
+</head>
+<body>
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="{site_up}index.html" class="nav-logo">
+            <span class="logo-icon">M</span>
+            MYTH
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="{site_up}index.html">首页</a></li>
+            <li><a href="{site_up}index.html#about">关于</a></li>
+            <li><a href="{site_up}index.html#repos">GitHub</a></li>
+            <li><a href="{site_up}index.html#wechat">公众号</a></li>
+            <li><a href="{blog_up}index.html" class="{'active' if depth == 0 else ''}">博客</a></li>
+            <li><a href="{site_up}index.html#contact">联系</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="菜单">
+            <span></span><span></span><span></span>
+        </button>
+        <button class="nav-theme-toggle" id="themeToggle" aria-label="切换主题">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="19.78" y1="4.22" x2="18.36" y2="5.64"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/></svg>
+        </button>
+    </div>
+</nav>
+"""
+
+
+def page_foot(depth):
+    blog_up = "../" * depth
+    site_up = blog_up + "../"
+    return f"""<footer class="site-footer">
+    <div class="footer-inner">
+        <p>© 2026 MYTH · 用 Python 生成的静态博客</p>
+        <div class="footer-links">
+            <a href="{site_up}index.html">首页</a>
+            <a href="{site_up}index.html#repos">开源项目</a>
+            <a href="https://github.com/hjtr7mymht-dot" target="_blank" rel="noopener">GitHub</a>
+            <a href="{blog_up}feed.xml">RSS</a>
+        </div>
+    </div>
+</footer>
+<script src="{blog_up}assets/blog.js"></script>
+</body>
+</html>
+"""
+
+
+def build_index(posts):
+    cards = []
+    for p in posts:
+        tags = "".join(f'<span class="tag">{t}</span>' for t in p["tags"])
+        y, m, d = p["date"].split("-") if len(p["date"].split("-")) == 3 else ("", "", "")
+        card = f"""        <article class="post-card fade-up">
+            <div class="post-card-meta">
+                <time datetime="{p['date']}">{y} 年 {int(m)} 月 {int(d)} 日</time>
+                {tags}
+            </div>
+            <h2 class="post-card-title"><a href="{p['url']}">{html.escape(p['title'])}</a></h2>
+            <p class="post-card-summary">{html.escape(p['summary'])}</p>
+            <a class="post-card-more" href="{p['url']}">阅读全文 <span>→</span></a>
+        </article>"""
+        cards.append(card)
+
+    body = f"""<main class="container blog-main">
+    <header class="blog-header fade-up">
+        <div class="section-label">Blog</div>
+        <h1 class="section-title">MYTH 的博客</h1>
+        <p class="section-desc">写点儿做东西过程中的真实记录：AI 工具拆解、Python 自动化、物联网实践。不追热点，只写自己动手验证过的。</p>
+    </header>
+    <div class="post-list">
+{chr(10).join(cards)}
+    </div>
+    <p class="feed-hint fade-up">订阅更新：<a href="feed.xml">RSS Feed</a></p>
+</main>
+"""
+    head = page_head(
+        "MYTH 的博客 | AI 产品 × Python 自动化",
+        "MYTH 的个人博客：AI 工具拆解、Python 自动化与物联网实践的真实记录。",
+        0,
+        BLOG_URL,
+    )
+    (ROOT / "index.html").write_text(head + body + page_foot(0), encoding="utf-8")
+    print(f"  ✓ index.html（{len(posts)} 篇文章）")
+
+
+def build_post(p, prev_post, next_post):
+    content = render_markdown(p["body"])
+    tags = "".join(f'<span class="tag">{t}</span>' for t in p["tags"])
+    y, m, d = p["date"].split("-")
+
+    nav_html = ""
+    if next_post:  # 列表更靠前 = 更新的一篇
+        n_url = Path(next_post["url"]).name
+        nav_html += f'<a class="post-nav-link" href="{n_url}"><span>更新一篇</span><strong>{html.escape(next_post["title"])}</strong></a>'
+    if prev_post:  # 列表更靠后 = 更早的一篇
+        p_url = Path(prev_post["url"]).name
+        nav_html += f'<a class="post-nav-link next" href="{p_url}"><span>更早一篇</span><strong>{html.escape(prev_post["title"])}</strong></a>'
+
+    body = f"""<main class="container post-main">
+    <a class="back-link" href="../index.html">← 返回博客首页</a>
+    <article class="post-article">
+        <header class="post-header fade-up">
+            <div class="post-card-meta">
+                <time datetime="{p['date']}">{y} 年 {int(m)} 月 {int(d)} 日</time>
+                {tags}
+            </div>
+            <h1>{html.escape(p['title'])}</h1>
+            <p class="post-lede">{html.escape(p['summary'])}</p>
+        </header>
+        <div class="prose fade-up">
+{content}
+        </div>
+    </article>
+    {f'<div class="post-nav">{nav_html}</div>' if nav_html else ''}
+</main>
+"""
+    head = page_head(
+        f"{p['title']} | MYTH 的博客",
+        p["summary"] or p["title"],
+        1,
+        BLOG_URL + p["url"],
+    )
+    out = ROOT / "posts" / f"{p['slug']}.html"
+    out.write_text(head + body + page_foot(1), encoding="utf-8")
+    print(f"  ✓ posts/{out.name}")
+
+
+def build_feed(posts):
+    items = []
+    for p in posts[:20]:
+        link = BLOG_URL + p["url"]
+        desc = html.escape(p["summary"] or p["title"])
+        items.append(f"""    <item>
+      <title>{html.escape(p['title'])}</title>
+      <link>{link}</link>
+      <guid>{link}</guid>
+      <pubDate>{p['date_obj'].replace(tzinfo=CST).strftime('%a, %d %b %Y %H:%M:%S +0800')}</pubDate>
+      <description>{desc}</description>
+    </item>""")
+    xml = f"""<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>MYTH 的博客</title>
+    <link>{BLOG_URL}</link>
+    <description>AI 工具拆解、Python 自动化与物联网实践的真实记录。</description>
+    <language>zh-cn</language>
+{chr(10).join(items)}
+  </channel>
+</rss>
+"""
+    (ROOT / "feed.xml").write_text(xml, encoding="utf-8")
+    print("  ✓ feed.xml")
+
+
+def main():
+    print("构建博客…")
+    posts = load_posts()
+    if not posts:
+        print("  没有找到文章，posts/ 目录是空的？")
+        sys.exit(1)
+    build_index(posts)
+    for idx, p in enumerate(posts):
+        newer = posts[idx - 1] if idx > 0 else None   # 列表倒序，idx-1 是更新的一篇
+        older = posts[idx + 1] if idx < len(posts) - 1 else None
+        build_post(p, prev_post=older, next_post=newer)
+    build_feed(posts)
+    print(f"完成：{len(posts)} 篇文章")
+
+
+if __name__ == "__main__":
+    main()
