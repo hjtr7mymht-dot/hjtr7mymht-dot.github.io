@@ -7,9 +7,9 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>MYTH - AI 产品工程师</title>
-    <meta name="description" content="MYTH，AI 产品工程师。产品视角拆解 AI 应用，代码级实现分析。公众号「Myth Zx」主理人。">
+    <meta name="description" content="MYTH，AI 产品工程师。产品视角拆解 AI 应用，代码级实现分析。公众号「Myth Zx」主理人，个人博客持续更新。">
     <meta property="og:title" content="MYTH | AI 产品工程师">
-    <meta property="og:description" content="产品视角拆解 AI 应用，代码级实现分析。物联网实践与 Python 自动化。">
+    <meta property="og:description" content="产品视角拆解 AI 应用，代码级实现分析。物联网实践与 Python 自动化，另有个人博客 /blog/ 记录动手过程。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hjtr7mymht-dot.github.io/">
     <meta property="og:image" content="https://hjtr7mymht-dot.github.io/avatar.jpg">
@@ -1430,6 +1430,61 @@
             50% { opacity: 1; transform: scale(1.02); }
         }
 
+        /* ===== Blog (最新文章) ===== */
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .blog-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 22px 26px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--card-shadow);
+            text-decoration: none;
+            transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .blog-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--purple), var(--cyan));
+            opacity: 0;
+            transition: opacity var(--transition);
+        }
+        .blog-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: transparent;
+        }
+        .blog-item:hover::before { opacity: 1; }
+        .blog-item-date {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--text-tertiary);
+            letter-spacing: 0.4px;
+        }
+        .blog-item-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.5;
+            transition: color var(--transition);
+        }
+        .blog-item:hover .blog-item-title { color: var(--accent); }
+        .blog-item-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
         /* ===== Responsive ===== */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
@@ -1536,23 +1591,27 @@
                 GitHub
             </a>
             <a href="#wechat" class="btn btn-secondary">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 01-1.162-1.178c0-.651.52-1.18 1.162-1.18zm3.97 3.258c-2.015-.103-3.886.478-5.33 1.684-1.531 1.277-2.418 3.266-1.607 5.551.79 2.117 2.854 3.476 5.014 3.476.683 0 1.345-.12 1.973-.354a.597.597 0 01.49.068l1.313.768a.226.226 0 00.115.037.204.204 0 00.2-.204c0-.05-.02-.099-.033-.147l-.27-1.023a.408.408 0 01.147-.459c1.353-1.002 2.19-2.467 2.19-4.1 0-2.872-2.47-5.069-5.202-5.247zm-1.59 2.609c.443 0 .803.365.803.816a.81.81 0 01-.804.816.81.81 0 01-.803-.816c0-.451.36-.816.803-.816zm4.017 0c.443 0 .803.365.803.816a.81.81 0 01-.803.816.81.81 0 01-.804-.816c0-.451.36-.816.804-.816z"/></svg>
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 01.213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 00.167-.054l1.903-1.114a.864.864 0 01.717-.098 10.16 10.16 0 002.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178A1.17 1.17 0 014.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 01-1.162 1.178 1.17 1.17 0 011.162-1.178c0-.651-.52-1.18-1.162-1.18zm3.97 3.258c-2.015-.103-3.886.478-5.33 1.684-1.531 1.277-2.418 3.266-1.607 5.551.79 2.117 2.854 3.476 5.014 3.476.683 0 1.345-.12 1.973-.354a.597.597 0 01.49.068l1.313.768a.226.226 0 00.115.037.204.204 0 00.2-.204c0-.05-.02-.099-.033-.147l-.27-1.023a.408.408 0 01.147-.459c1.353-1.002 2.19-2.467 2.19-4.1 0-2.872-2.47-5.069-5.202-5.247zm-1.59 2.609c.443 0 .803.365.803.816a.81.81 0 01-.804.816.81.81 0 01-.803-.816c0-.451.36-.816.803-.816zm4.017 0c.443 0 .803.365.803.816a.81.81 0 01-.804.816.81.81 0 01-.803-.816c0-.451.36-.816.803-.816z"/></svg>
                 微信公众号
+            </a>
+            <a href="blog/" class="btn btn-secondary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                读博客
             </a>
         </div>
 
         <div class="stats-bar" id="statsBar">
             <div class="stat">
-                <div class="stat-number">46+</div>
+                <div class="stat-number" id="statStars">46+</div>
                 <div class="stat-label">GitHub Stars</div>
             </div>
             <div class="stat">
-                <div class="stat-number">5</div>
+                <div class="stat-number" id="statRepos">5</div>
                 <div class="stat-label">开源项目</div>
             </div>
             <div class="stat">
-                <div class="stat-number">每周 1-2 篇</div>
-                <div class="stat-label">深度长文更新</div>
+                <div class="stat-number" id="statPosts">每周 1-2 篇</div>
+                <div class="stat-label" id="statPostsLabel">深度长文更新</div>
             </div>
         </div>
     </div>
@@ -1593,7 +1652,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
                 </div>
                 <h3>内容输出</h3>
-                <p>公众号「Myth Zx」主理人，AI 产品 × 技术双视角拆解，每周 1-2 篇深度长文。</p>
+                <p>公众号「Myth Zx」主理人，AI 产品 × 技术双视角拆解；个人博客同步归档动手过程，每周 1-2 篇深度长文。</p>
             </div>
         </div>
 
@@ -1630,7 +1689,7 @@
             <p class="section-desc">我正在构建的项目，从 AI 工具到自动化方案，覆盖产品、开发与基础设施。</p>
         </div>
         <div id="reposContainer" class="repos-grid fade-up">
-            <a href="https://github.com/hjtr7mymht-dot/WOA_AutoBot" target="_blank" class="repo-card featured" data-featured="true">
+            <a href="https://github.com/hjtr7mymht-dot/WOA_AutoBot" target="_blank" class="repo-card featured" data-featured="true" data-repo="WOA_AutoBot">
                 <div class="repo-header">
                     <div class="repo-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
@@ -1640,11 +1699,11 @@
                 <p class="repo-desc">基于 Python 图像识别的自动化工具，为《World of Airports》玩家自动处理机场地面任务。完整覆盖从识别到决策的实现链路。</p>
                 <div class="repo-meta">
                     <span><span class="repo-lang-dot" style="background:#3776AB"></span>Python</span>
-                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>46</span>
-                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12l4 6-10 13L2 9z"/></svg>12</span>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="js-stars">46</span></span>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12l4 6-10 13L2 9z"/></svg><span class="js-forks">12</span></span>
                 </div>
             </a>
-            <a href="https://github.com/hjtr7mymht-dot/REIB" target="_blank" class="repo-card featured" data-featured="true">
+            <a href="https://github.com/hjtr7mymht-dot/REIB" target="_blank" class="repo-card featured" data-featured="true" data-repo="REIB">
                 <div class="repo-header">
                     <div class="repo-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 10v6m4.22-4.22l4.24-4.24M3.54 3.54l4.24 4.24M1 12h6m10 0h6m-4.22 4.22l4.24 4.24M3.54 20.46l4.24-4.24"/></svg>
@@ -1654,11 +1713,12 @@
                 <p class="repo-desc">基于多模态感知的牧区物联网无人值守巡检系统——传感器接入、MQTT 通信、远程数据采集，解决草原场景下的无人巡检难题。</p>
                 <div class="repo-meta">
                     <span><span class="repo-lang-dot" style="background:#3776AB"></span>Python</span>
-                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4" fill="none"/>&nbsp;</span>物联网</span>
-                    <span>&nbsp;</span>
+                    <span>物联网</span>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="js-stars">0</span></span>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12l4 6-10 13L2 9z"/></svg><span class="js-forks">0</span></span>
                 </div>
             </a>
-            <a href="https://github.com/hjtr7mymht-dot/CrossClip" target="_blank" class="repo-card featured" data-featured="true">
+            <a href="https://github.com/hjtr7mymht-dot/CrossClip-" target="_blank" class="repo-card featured" data-featured="true" data-repo="CrossClip-">
                 <div class="repo-header">
                     <div class="repo-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
@@ -1668,8 +1728,9 @@
                 <p class="repo-desc">Windows ↔ iPhone 局域网剪切板文本互传工具。零成本、轻量级、数据不出局域网。</p>
                 <div class="repo-meta">
                     <span><span class="repo-lang-dot" style="background:#3776AB"></span>Python</span>
-                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4" fill="none"/>&nbsp;</span>局域网</span>
-                    <span>&nbsp;</span>
+                    <span>局域网</span>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span class="js-stars">0</span></span>
+                    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12l4 6-10 13L2 9z"/></svg><span class="js-forks">0</span></span>
                 </div>
             </a>
         </div>
@@ -1742,6 +1803,31 @@
                     </a>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog -->
+<section id="blog" class="blog-section">
+    <div class="container">
+        <div class="fade-up">
+            <div class="section-label">博客</div>
+            <h2 class="section-title">最新文章</h2>
+            <p class="section-desc">动手验证过的记录：AI 工具拆解、Python 自动化、物联网实践。文章列表自动从博客 RSS 同步。</p>
+        </div>
+        <div id="blogList" class="blog-list fade-up">
+            <a class="blog-item" href="blog/">
+                <span class="blog-item-date">Blog</span>
+                <span class="blog-item-title">博客已开张，点这里进入 →</span>
+                <span class="blog-item-desc">文章列表加载中…（拉取失败时点这里也能进博客）</span>
+            </a>
+        </div>
+        <div class="fade-up" style="margin-top: 28px;">
+            <a href="blog/" class="btn btn-primary">
+                进入博客
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="blog/feed.xml" class="btn btn-secondary" target="_blank" rel="noopener">RSS 订阅</a>
         </div>
     </div>
 </section>
@@ -2140,7 +2226,9 @@ const CONFIG = {
 })();
 
 // ===== Number Counter Animation =====
-function animateCounter(el, target) {
+function animateCounter(el, target, suffix) {
+    if (!el || typeof target !== 'number' || isNaN(target)) return;
+    suffix = suffix || '';
     const duration = 1500;
     const start = performance.now();
     const initial = 0;
@@ -2148,52 +2236,80 @@ function animateCounter(el, target) {
         const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(initial + (target - initial) * eased);
+        el.textContent = Math.round(initial + (target - initial) * eased) + suffix;
         if (progress < 1) requestAnimationFrame(update);
     }
     requestAnimationFrame(update);
+    // 兜底：后台标签页 rAF 会被暂停，到点直接写最终值，数字永远不卡在动画中间
+    setTimeout(() => { el.textContent = target + suffix; }, duration + 400);
+}
+
+function escapeHtml(str) {
+    return String(str == null ? '' : str)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
 // ===== GitHub API =====
+// 匿名访问限速 60 次/小时，加 10 分钟本地缓存，避免多次刷新吃掉额度
+async function ghCached(url) {
+    const key = 'ghcache_' + url;
+    try {
+        const hit = JSON.parse(localStorage.getItem(key) || 'null');
+        if (hit && hit.t && (Date.now() - hit.t) < 10 * 60 * 1000) return hit.d;
+    } catch (e) { /* 缓存坏了就重新拉 */ }
+    const res = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } });
+    if (!res.ok) throw new Error('GitHub API HTTP ' + res.status);
+    const data = await res.json();
+    try { localStorage.setItem(key, JSON.stringify({ t: Date.now(), d: data })); } catch (e) {}
+    return data;
+}
+
 async function fetchGitHubData() {
     try {
-        const [userRes, reposRes] = await Promise.all([
-            fetch(`https://api.github.com/users/${CONFIG.githubUsername}`),
-            fetch(`https://api.github.com/users/${CONFIG.githubUsername}/repos?sort=${CONFIG.sortBy}&per_page=${CONFIG.maxRepos}&type=${CONFIG.repoTypes[0]}`)
+        const [user, repos] = await Promise.all([
+            ghCached(`https://api.github.com/users/${CONFIG.githubUsername}`),
+            ghCached(`https://api.github.com/users/${CONFIG.githubUsername}/repos?sort=updated&type=owner&per_page=100`)
         ]);
 
-        if (!userRes.ok || !reposRes.ok) throw new Error('GitHub API request failed');
+        // 顶部数据栏：星标总数 / 开源项目数（拉取失败时保留页面上的静态兜底值）
+        const totalStars = repos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
+        setTimeout(() => animateCounter(document.getElementById('statStars'), totalStars, '+'), 900);
+        setTimeout(() => animateCounter(document.getElementById('statRepos'), user.public_repos), 1100);
 
-        const user = await userRes.json();
-        const repos = await reposRes.json();
-
-        // Animate stats
-        setTimeout(() => animateCounter(document.getElementById('statRepos'), user.public_repos), 1000);
-        setTimeout(() => animateCounter(document.getElementById('statFollowers'), user.followers), 1200);
-
-        // Commits
-        const eventsRes = await fetch(`https://api.github.com/users/${CONFIG.githubUsername}/events/public?per_page=100`);
-        if (eventsRes.ok) {
-            const events = await eventsRes.json();
-            const oneYearAgo = new Date();
-            oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
-            const commits = events.filter(e => e.type === 'PushEvent' && new Date(e.created_at) > oneYearAgo)
-                .reduce((sum, e) => sum + (e.payload?.commits?.length || 0), 0);
-            setTimeout(() => animateCounter(document.getElementById('statCommits'), commits), 1400);
-        }
-
+        updateFeaturedStats(repos);
         renderRepos(repos);
     } catch (error) {
-        console.error('GitHub fetch error:', error);
+        console.warn('GitHub 数据获取失败，沿用页面上的静态数据：', error.message);
     }
+}
+
+// 置顶的精选仓库卡片：星标 / fork 改为实时数字
+function updateFeaturedStats(repos) {
+    const byName = {};
+    repos.forEach(r => { byName[r.name] = r; });
+    document.querySelectorAll('.repo-card[data-featured][data-repo]').forEach(card => {
+        const repo = byName[card.getAttribute('data-repo')];
+        if (!repo) return;
+        const starEl = card.querySelector('.js-stars');
+        const forkEl = card.querySelector('.js-forks');
+        if (starEl) starEl.textContent = repo.stargazers_count;
+        if (forkEl) forkEl.textContent = repo.forks_count;
+    });
 }
 
 function renderRepos(repos) {
     const container = document.getElementById('reposContainer');
     if (!repos.length) return;
     const featured = container.querySelectorAll('[data-featured]');
+    // 精选卡片已经写在 HTML 里，别再重复渲染一遍
+    const featuredNames = new Set(
+        Array.from(container.querySelectorAll('[data-featured][data-repo]'))
+            .map(card => card.getAttribute('data-repo'))
+    );
+    const rest = repos.filter(repo => !featuredNames.has(repo.name)).slice(0, CONFIG.maxRepos);
     const startIndex = featured.length;
-    const newCards = repos.map((repo, i) => {
+    const newCards = rest.map((repo, i) => {
         const langColor = getLangColor(repo.language);
         return `
             <a href="${repo.html_url}" target="_blank" class="repo-card" style="animation: fadeUp 0.5s ${(startIndex + i) * 0.08}s both;">
@@ -2244,6 +2360,51 @@ function getLangColor(lang) {
     return colors[lang] || '#8b8da3';
 }
 
+// ===== 博客最新文章（读取 blog/feed.xml，文章有更新首页自动变）=====
+function formatPostDate(pubDate) {
+    const d = new Date(pubDate);
+    if (isNaN(d.getTime())) return escapeHtml(pubDate || '');
+    const pad = n => String(n).padStart(2, '0');
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+}
+
+function renderBlogPosts(items) {
+    const list = document.getElementById('blogList');
+    if (!list || !items.length) return;
+    list.innerHTML = items.map(it => `
+        <a class="blog-item" href="${escapeHtml(it.link)}">
+            <span class="blog-item-date">${formatPostDate(it.date)}</span>
+            <span class="blog-item-title">${escapeHtml(it.title)}</span>
+            <span class="blog-item-desc">${escapeHtml(it.desc)}</span>
+        </a>
+    `).join('');
+}
+
+async function fetchBlogPosts() {
+    try {
+        const res = await fetch('blog/feed.xml', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const xmlText = await res.text();
+        const doc = new DOMParser().parseFromString(xmlText, 'application/xml');
+        if (doc.querySelector('parsererror')) throw new Error('RSS 解析失败');
+        const all = Array.from(doc.querySelectorAll('channel > item'));
+        if (!all.length) return;
+        const items = all.slice(0, 3).map(item => ({
+            title: (item.querySelector('title') || {}).textContent || '',
+            link: (item.querySelector('link') || {}).textContent || 'blog/',
+            date: (item.querySelector('pubDate') || {}).textContent || '',
+            desc: (item.querySelector('description') || {}).textContent || ''
+        }));
+        renderBlogPosts(items);
+        // 顶部第三格：真实文章数（拉取失败时保留「每周 1-2 篇」兜底）
+        setTimeout(() => animateCounter(document.getElementById('statPosts'), all.length), 1300);
+        const label = document.getElementById('statPostsLabel');
+        if (label) label.textContent = '篇博客文章';
+    } catch (error) {
+        console.warn('博客 RSS 获取失败，沿用页面上的静态入口：', error.message);
+    }
+}
+
 // ===== Navigation =====
 const navbar = document.getElementById('navbar');
 const navToggle = document.getElementById('navToggle');
@@ -2267,7 +2428,10 @@ window.addEventListener('scroll', () => {
         if (window.scrollY >= section.offsetTop - 100) current = section.getAttribute('id');
     });
     navItems.forEach(item => {
-        item.classList.toggle('active', item.getAttribute('href') === `#${current}`);
+        const href = item.getAttribute('href');
+        // 兼容锚点（#about）和真实路径（blog/）两种导航
+        const target = href.charAt(0) === '#' ? href.slice(1) : href.replace(/\/+$/, '');
+        item.classList.toggle('active', target === current);
     });
 });
 
@@ -2278,6 +2442,12 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+// 保险：观察器 4 秒都没触发（后台标签页 / 极端环境）就强制显示，正文永不隐身
+setTimeout(() => {
+    if (!document.querySelector('.fade-up.visible')) {
+        document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
+    }
+}, 4000);
 
 // ===== Email Provider Redirect =====
 function getEmailProviderUrl(email) {
@@ -2337,7 +2507,10 @@ function getEmailProviderUrl(email) {
 })();
 
 // ===== Init =====
-document.addEventListener('DOMContentLoaded', fetchGitHubData);
+document.addEventListener('DOMContentLoaded', () => {
+    fetchGitHubData();
+    fetchBlogPosts();
+});
 </script>
 </body>
 </html>
