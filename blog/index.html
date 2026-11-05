@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYTH 的博客 | AI 产品 × Python 自动化</title>
+    <meta name="description" content="MYTH 的个人博客：AI 工具拆解、Python 自动化与物联网实践的真实记录。">
+    <meta property="og:title" content="MYTH 的博客 | AI 产品 × Python 自动化">
+    <meta property="og:description" content="MYTH 的个人博客：AI 工具拆解、Python 自动化与物联网实践的真实记录。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hjtr7mymht-dot.github.io/blog/">
+    <link rel="alternate" type="application/rss+xml" title="MYTH 的博客" href="feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            var t = localStorage.getItem('theme');
+            if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', t);
+            // 入场动画只在 JS 可用时生效；blog.js 没跑起来就 3.5 秒后自动取消隐藏
+            document.documentElement.classList.add('js-anim');
+            setTimeout(function () {
+                if (!window.__blogReady) document.documentElement.classList.remove('js-anim');
+            }, 3500);
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/blog.css">
+</head>
+<body>
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="../index.html" class="nav-logo">
+            <span class="logo-icon">M</span>
+            MYTH
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="../index.html#about">关于</a></li>
+            <li><a href="../index.html#repos">GitHub</a></li>
+            <li><a href="../index.html#wechat">公众号</a></li>
+            <li><a href="index.html" class="active">博客</a></li>
+            <li><a href="../index.html#contact">联系</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="菜单">
+            <span></span><span></span><span></span>
+        </button>
+        <button class="nav-theme-toggle" id="themeToggle" aria-label="切换主题">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="19.78" y1="4.22" x2="18.36" y2="5.64"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="container blog-main">
+    <header class="blog-header fade-up">
+        <div class="section-label">Blog</div>
+        <h1 class="section-title">MYTH 的博客</h1>
+        <p class="section-desc">写点儿做东西过程中的真实记录：AI 工具拆解、Python 自动化、物联网实践。不追热点，只写自己动手验证过的。</p>
+    </header>
+    <div class="post-list">
+        <article class="post-card fade-up">
+            <div class="post-card-meta">
+                <time datetime="2026-11-05">2026 年 11 月 5 日</time>
+                <span class="tag">Python</span><span class="tag">图像识别</span><span class="tag">自动化</span>
+            </div>
+            <h2 class="post-card-title"><a href="posts/woa-autobot-vision.html">WOA_AutoBot 是怎么用图像识别替我打理机场的</a></h2>
+            <p class="post-card-summary">从截图、识图到点下去，一条完整的自动化链路是怎么搭的——状态机、模板匹配、同帧批匹配，以及为什么要这么做。</p>
+            <a class="post-card-more" href="posts/woa-autobot-vision.html">阅读全文 <span>→</span></a>
+        </article>
+        <article class="post-card fade-up">
+            <div class="post-card-meta">
+                <time datetime="2026-11-05">2026 年 11 月 5 日</time>
+                <span class="tag">博客</span><span class="tag">随笔</span>
+            </div>
+            <h2 class="post-card-title"><a href="posts/hello-blog.html">个人博客开张了：为什么我又给自己加了个静态站</a></h2>
+            <p class="post-card-summary">公众号发了这么久，这次把写作的根放回自己的域名下——纯静态 HTML、一个 Python 脚本生成，没有框架没有依赖。</p>
+            <a class="post-card-more" href="posts/hello-blog.html">阅读全文 <span>→</span></a>
+        </article>
+    </div>
+    <p class="feed-hint fade-up">订阅更新：<a href="feed.xml">RSS Feed</a></p>
+</main>
+<footer class="site-footer">
+    <div class="footer-inner">
+        <p>© 2026 MYTH · 用 Python 生成的静态博客</p>
+        <div class="footer-links">
+            <a href="../index.html">首页</a>
+            <a href="../index.html#repos">开源项目</a>
+            <a href="https://github.com/hjtr7mymht-dot" target="_blank" rel="noopener">GitHub</a>
+            <a href="feed.xml">RSS</a>
+        </div>
+    </div>
+</footer>
+<script src="assets/blog.js"></script>
+</body>
+</html>

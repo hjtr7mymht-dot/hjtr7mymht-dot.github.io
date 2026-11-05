@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人博客开张了：为什么我又给自己加了个静态站 | MYTH 的博客</title>
+    <meta name="description" content="公众号发了这么久，这次把写作的根放回自己的域名下——纯静态 HTML、一个 Python 脚本生成，没有框架没有依赖。">
+    <meta property="og:title" content="个人博客开张了：为什么我又给自己加了个静态站 | MYTH 的博客">
+    <meta property="og:description" content="公众号发了这么久，这次把写作的根放回自己的域名下——纯静态 HTML、一个 Python 脚本生成，没有框架没有依赖。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hjtr7mymht-dot.github.io/blog/posts/hello-blog.html">
+    <link rel="alternate" type="application/rss+xml" title="MYTH 的博客" href="../feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            var t = localStorage.getItem('theme');
+            if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', t);
+            // 入场动画只在 JS 可用时生效；blog.js 没跑起来就 3.5 秒后自动取消隐藏
+            document.documentElement.classList.add('js-anim');
+            setTimeout(function () {
+                if (!window.__blogReady) document.documentElement.classList.remove('js-anim');
+            }, 3500);
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/blog.css">
+</head>
+<body>
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="../../index.html" class="nav-logo">
+            <span class="logo-icon">M</span>
+            MYTH
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../../index.html">首页</a></li>
+            <li><a href="../../index.html#about">关于</a></li>
+            <li><a href="../../index.html#repos">GitHub</a></li>
+            <li><a href="../../index.html#wechat">公众号</a></li>
+            <li><a href="../index.html" class="">博客</a></li>
+            <li><a href="../../index.html#contact">联系</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="菜单">
+            <span></span><span></span><span></span>
+        </button>
+        <button class="nav-theme-toggle" id="themeToggle" aria-label="切换主题">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="19.78" y1="4.22" x2="18.36" y2="5.64"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="container post-main">
+    <a class="back-link" href="../index.html">← 返回博客首页</a>
+    <article class="post-article">
+        <header class="post-header fade-up">
+            <div class="post-card-meta">
+                <time datetime="2026-11-05">2026 年 11 月 5 日</time>
+                <span class="tag">博客</span><span class="tag">随笔</span>
+            </div>
+            <h1>个人博客开张了：为什么我又给自己加了个静态站</h1>
+            <p class="post-lede">公众号发了这么久，这次把写作的根放回自己的域名下——纯静态 HTML、一个 Python 脚本生成，没有框架没有依赖。</p>
+        </header>
+        <div class="prose fade-up">
+<p>折腾了一晚上，我的个人博客终于上线了，就在这个网站的 <code>/blog/</code> 下面。这篇文章说说为什么做，以及它是怎么跑起来的。</p>
+<h2 id="为什么还要一个博客">为什么还要一个博客</h2>
+<p>公众号是我的主要输出阵地，但它是租来的地。排版受限、随时可能改规则、文章的"数字产权"始终不完全在我手里。</p>
+<p>我的想法很简单：<strong>写过的东西，得有个自己的家。</strong></p>
+<p>个人网站之前是单页结构——首页、关于、项目、联系方式，一页滑到底。它适合当名片，但不适合当内容载体。卡片上写的"每周 1-2 篇深度长文更新"，总得有个地方承接这些长文。</p>
+<h2 id="技术选型能跑通最小闭环就行">技术选型：能跑通最小闭环就行</h2>
+<p>我一直相信一句话：先跑通最小闭环，再谈规模化。这次的选型完全按这个原则来：</p>
+<ul><li><strong>纯静态 HTML + CSS</strong>，没有 React、没有 Next.js，双击都能打开</li><li><strong>GitHub Pages 托管</strong>，零成本，HTTPS 自带</li><li><strong>一个 300 行的 Python 脚本</strong>做静态生成，零第三方依赖</li><li>文章用 Markdown 写，<code>posts/</code> 目录下丢一个 <code>.md</code> 文件就行</li></ul>
+<p>生成脚本只做三件事：读 Markdown、套模板、输出 HTML。支持的语法是够用的子集——标题、列表、引用、代码块、加粗、链接，没有多余的花活。</p>
+<pre><code class="language-bash">cd blog
+python3 build.py
+git add . &amp;&amp; git commit -m &quot;博客更新&quot; &amp;&amp; git push</code></pre>
+<p>三行命令，一次发布。不需要 build 工具链，不需要 node_modules，换台电脑也能发文章。</p>
+<h2 id="和主页共用主题">和主页共用主题</h2>
+<p>博客跟主页用的是同一套设计变量：同一套颜色、同一个 Inter 字体、同一个圆角和阴影。最重要的是<strong>主题状态共用 <code>localStorage</code> 的同一个 key</strong>——你在主页切成暗色，点进博客也是暗色，不用再切一次。</p>
+<p>这种"小细节"不难做，但省掉的那点割裂感很值。</p>
+<h2 id="以后会写什么">以后会写什么</h2>
+<p>大概三类：</p>
+<ol><li><strong>AI 产品拆解</strong> —— 不止说"这个好用"，要说清楚它为什么好用、怎么实现的</li><li><strong>Python 自动化实战</strong> —— 我做的那些工具，踩过的坑和解法</li><li><strong>物联网 / 工业互联网实践</strong> —— 专业相关，从设备接入到数据落地</li></ol>
+<p>不追热点，只写自己动手验证过的东西。能用代码验证的结论，不靠猜。</p>
+<p>博客支持 RSS，想订阅的在页脚找 <code>RSS Feed</code> 就行。欢迎常来。</p>
+        </div>
+    </article>
+    <nav class="post-nav"><a class="post-nav-link" href="woa-autobot-vision.html"><span>更新一篇</span><strong>WOA_AutoBot 是怎么用图像识别替我打理机场的</strong></a></nav>
+</main>
+<footer class="site-footer">
+    <div class="footer-inner">
+        <p>© 2026 MYTH · 用 Python 生成的静态博客</p>
+        <div class="footer-links">
+            <a href="../../index.html">首页</a>
+            <a href="../../index.html#repos">开源项目</a>
+            <a href="https://github.com/hjtr7mymht-dot" target="_blank" rel="noopener">GitHub</a>
+            <a href="../feed.xml">RSS</a>
+        </div>
+    </div>
+</footer>
+<script src="../assets/blog.js"></script>
+</body>
+</html>
