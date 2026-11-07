@@ -2251,37 +2251,49 @@ function escapeHtml(str) {
 }
 
 // ===== GitHub API =====
-// 匿名访问限速 60 次/小时，加 10 分钟本地缓存，避免多次刷新吃掉额度
-async function ghCached(url) {
-    const key = 'ghcache_' + url;
-    try {
-        const hit = JSON.parse(localStorage.getItem(key) || 'null');
-        if (hit && hit.t && (Date.now() - hit.t) < 10 * 60 * 1000) return hit.d;
-    } catch (e) { /* 缓存坏了就重新拉 */ }
-    const res = await fetch(url, { headers: { Accept: 'application/vnd.github+json' } });
+// 实时优先：每次打开都直接拉 api.github.com，新仓库/新 star 当即可见；
+// 拉不到（被墙/限速）再回退构建期固化的同源 repos.json。
+async function ghLive(url) {
+    const res = await fetch(url, { cache: 'no-store', headers: { Accept: 'application/vnd.github+json' } });
     if (!res.ok) throw new Error('GitHub API HTTP ' + res.status);
-    const data = await res.json();
-    try { localStorage.setItem(key, JSON.stringify({ t: Date.now(), d: data })); } catch (e) {}
-    return data;
+    return res.json();
 }
 
 async function fetchGitHubData() {
     try {
         const [user, repos] = await Promise.all([
-            ghCached(`https://api.github.com/users/${CONFIG.githubUsername}`),
-            ghCached(`https://api.github.com/users/${CONFIG.githubUsername}/repos?sort=updated&type=owner&per_page=100`)
+            ghLive(`https://api.github.com/users/${CONFIG.githubUsername}`),
+            ghLive(`https://api.github.com/users/${CONFIG.githubUsername}/repos?sort=updated&type=owner&per_page=100`)
         ]);
-
-        // 顶部数据栏：星标总数 / 开源项目数（拉取失败时保留页面上的静态兜底值）
-        const totalStars = repos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
-        setTimeout(() => animateCounter(document.getElementById('statStars'), totalStars, '+'), 900);
-        setTimeout(() => animateCounter(document.getElementById('statRepos'), user.public_repos), 1100);
-
-        updateFeaturedStats(repos);
-        renderRepos(repos);
-    } catch (error) {
-        console.warn('GitHub 数据获取失败，沿用页面上的静态数据：', error.message);
+        // 和 repos.json 同一套口径：排除站点自身仓库、fork、归档仓库
+        const clean = repos.filter(r => r.name !== 'hjtr7mymht-dot.github.io' && !r.fork && !r.archived);
+        const totalStars = clean.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
+        applyGitHubData(clean, { totalStars, totalRepos: clean.length });
+        return;
+    } catch (e) {
+        console.warn('实时 API 失败，回退 repos.json：', e.message);
     }
+
+    try {
+        const jres = await fetch('repos.json', { cache: 'no-cache' });
+        if (jres.ok) {
+            const j = await jres.json();
+            if (j && j.repos && j.repos.length) {
+                applyGitHubData(j.repos, { totalStars: j.total_stars, totalRepos: j.total_repos });
+                return;
+            }
+        }
+    } catch (e) { /* 用静态兜底 */ }
+    console.warn('GitHub 数据获取失败，沿用页面上的静态数据');
+}
+
+// 统一入口：repos.json 与实时 API 共用同一套渲染逻辑
+function applyGitHubData(repos, stats) {
+    const totalStars = stats.totalStars ?? repos.reduce((sum, r) => sum + (r.stargazers_count || 0), 0);
+    setTimeout(() => animateCounter(document.getElementById('statStars'), totalStars, '+'), 900);
+    setTimeout(() => animateCounter(document.getElementById('statRepos'), stats.totalRepos ?? repos.length), 1100);
+    updateFeaturedStats(repos);
+    renderRepos(repos);
 }
 
 // 置顶的精选仓库卡片：星标 / fork 改为实时数字
