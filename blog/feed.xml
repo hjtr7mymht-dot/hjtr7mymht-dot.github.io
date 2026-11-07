@@ -6,6 +6,13 @@
     <description>AI 工具拆解、Python 自动化与物联网实践的真实记录。</description>
     <language>zh-cn</language>
     <item>
+      <title>给博客加暗色模式，再让首页自己拉数据</title>
+      <link>https://hjtr7mymht-dot.github.io/blog/posts/blog-dark-mode-homepage-fetch.html</link>
+      <guid>https://hjtr7mymht-dot.github.io/blog/posts/blog-dark-mode-homepage-fetch.html</guid>
+      <pubDate>Sat, 07 Nov 2026 00:00:00 +0800</pubDate>
+      <description>暗色联动与首页自动取数怎么落地</description>
+    </item>
+    <item>
       <title>WOA_AutoBot 是怎么用图像识别替我打理机场的</title>
       <link>https://hjtr7mymht-dot.github.io/blog/posts/woa-autobot-vision.html</link>
       <guid>https://hjtr7mymht-dot.github.io/blog/posts/woa-autobot-vision.html</guid>
