@@ -6,6 +6,13 @@
     <description>AI 工具拆解、Python 自动化与物联网实践的真实记录。</description>
     <language>zh-cn</language>
     <item>
+      <title>试了下 Gemini CLI：长上下文搬运旧文好不好用</title>
+      <link>https://hjtr7mymht-dot.github.io/blog/posts/gemini-cli-long-context-port.html</link>
+      <guid>https://hjtr7mymht-dot.github.io/blog/posts/gemini-cli-long-context-port.html</guid>
+      <pubDate>Mon, 09 Nov 2026 00:00:00 +0800</pubDate>
+      <description>把旧公众号文章丢进长上下文，体感记录</description>
+    </item>
+    <item>
       <title>给博客加暗色模式，再让首页自己拉数据</title>
       <link>https://hjtr7mymht-dot.github.io/blog/posts/blog-dark-mode-homepage-fetch.html</link>
       <guid>https://hjtr7mymht-dot.github.io/blog/posts/blog-dark-mode-homepage-fetch.html</guid>

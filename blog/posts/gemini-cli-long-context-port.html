@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>试了下 Gemini CLI：长上下文搬运旧文好不好用 | MYTH 的博客</title>
+    <meta name="description" content="把旧公众号文章丢进长上下文，体感记录">
+    <meta property="og:title" content="试了下 Gemini CLI：长上下文搬运旧文好不好用 | MYTH 的博客">
+    <meta property="og:description" content="把旧公众号文章丢进长上下文，体感记录">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hjtr7mymht-dot.github.io/blog/posts/gemini-cli-long-context-port.html">
+    <link rel="alternate" type="application/rss+xml" title="MYTH 的博客" href="../feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            var t = localStorage.getItem('theme');
+            if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', t);
+            // 入场动画只在 JS 可用时生效；blog.js 没跑起来就 3.5 秒后自动取消隐藏
+            document.documentElement.classList.add('js-anim');
+            setTimeout(function () {
+                if (!window.__blogReady) document.documentElement.classList.remove('js-anim');
+            }, 3500);
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/blog.css">
+</head>
+<body>
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="../../index.html" class="nav-logo">
+            <span class="logo-icon">M</span>
+            MYTH
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../../index.html">首页</a></li>
+            <li><a href="../../index.html#about">关于</a></li>
+            <li><a href="../../index.html#repos">GitHub</a></li>
+            <li><a href="../../index.html#wechat">公众号</a></li>
+            <li><a href="../index.html" class="">博客</a></li>
+            <li><a href="../../index.html#contact">联系</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="菜单">
+            <span></span><span></span><span></span>
+        </button>
+        <button class="nav-theme-toggle" id="themeToggle" aria-label="切换主题">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="19.78" y1="4.22" x2="18.36" y2="5.64"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="container post-main">
+    <a class="back-link" href="../index.html">← 返回博客首页</a>
+    <article class="post-article">
+        <header class="post-header fade-up">
+            <div class="post-card-meta">
+                <time datetime="2026-11-09">2026 年 11 月 9 日</time>
+                <span class="tag">AI工具评测</span><span class="tag">开发日志</span>
+            </div>
+            <h1>试了下 Gemini CLI：长上下文搬运旧文好不好用</h1>
+            <p class="post-lede">把旧公众号文章丢进长上下文，体感记录</p>
+        </header>
+        <div class="prose fade-up">
+<p>博客开张之后，手里攒了一堆公众号旧文想慢慢搬过来。搬文这事儿最烦的不是写，是把一篇排版各异、带一堆公众号特有格式的文章，整理成我博客生成器认的那套 front-matter 加纯 Markdown。正好 Gemini CLI 主打长上下文，我拿它试了试「整篇旧文丢进去、让它按我的格式吐出来」这条路。</p>
+<h2 id="为什么是-gemini-cli">为什么是 Gemini CLI</h2>
+<p>我主力机是隐星 P15（i7-12700H 配 RTX4060），跑这类命令行 AI 工具绰绰有余。选 Gemini CLI 主要冲它的长上下文——旧文有的挺长，连同我站点现成的 CSS 约定、<code>build.py</code> 的 front-matter 要求一起喂进去，它理论上能一口气记住从头到尾的约束。这点比那些上下文一拉长就顾头不顾尾的工具让我放心。</p>
+<h2 id="实际怎么用的">实际怎么用的</h2>
+<p>我的流程很简单：把一篇旧公众号文章贴进 prompt，再附上几条硬规矩——front-matter 必须用 <code>---</code> 上下包裹、冒号后一个空格、<code>tags</code> 用逗号分隔不要方括号、绝不用 Markdown 表格、正文从第二个 <code>---</code> 之后空一行开始。然后让它照这个壳子把文章重排出来。</p>
+<p>体感上，它对长文整体结构的把握确实不错。一篇几千字的旧文丢进去，它基本不会把中间某段弄丢，前后语气也接得住，不像有些工具写到后面就开始重复或者跑题。这对搬文来说是硬需求——你最怕的就是它悄悄把一段漏了你还发现不了。</p>
+<h2 id="但也不是全顺">但也不是全顺</h2>
+<p>有几个小摩擦。一是它特别爱帮忙润色，有时候会顺手把我原本的口语化表达改得过于书面，我得补一句只改格式、别动文字才压住。二是个别时候它会自作主张加一些它以为我需要的小标题层级，跟我博客的 <code>##</code> 渲染规则偶尔对不上，得我跑一遍 <code>python3 build.py</code> 看报错再打回去。</p>
+<p>还有一个现实问题：搬文这种活，真正费时间的不是生成，是核对。AI 吐出来的版本我再逐段对照原稿，确认没漏没改意思，这步省不掉。所以它省的是格式重排的体力，不是校对的脑力。</p>
+<h2 id="我的结论">我的结论</h2>
+<p>Gemini CLI 干长文格式搬运这活是称职的，长上下文不是噱头，整篇旧文连约束一起喂进去它能接住。但它更适合当我的格式整理助手，最终落地的准确度和语气，还是得我自己把最后一道关。搬完一篇，丢进 <code>posts/</code>，跑生成器，提交推送——这套流程跑通了，旧文上站就只是时间问题。</p>
+<p>如果你也打算把旧文往新站搬，我的建议是：先把目标格式写成一条铁律一起喂进去，再让它干，比事后改省事得多。</p>
+        </div>
+    </article>
+    <div class="post-nav"><a class="post-nav-link next" href="blog-dark-mode-homepage-fetch.html"><span>更早一篇</span><strong>给博客加暗色模式，再让首页自己拉数据</strong></a></div>
+</main>
+<footer class="site-footer">
+    <div class="footer-inner">
+        <p>© 2026 MYTH · 用 Python 生成的静态博客</p>
+        <div class="footer-links">
+            <a href="../../index.html">首页</a>
+            <a href="../../index.html#repos">开源项目</a>
+            <a href="https://github.com/hjtr7mymht-dot" target="_blank" rel="noopener">GitHub</a>
+            <a href="../feed.xml">RSS</a>
+        </div>
+    </div>
+</footer>
+<script src="../assets/blog.js"></script>
+</body>
+</html>
