@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用 PyInstaller 打包桌面应用，我踩过的 5 个坑 | MYTH 的博客</title>
+    <meta name="description" content="桌面应用打包的五个真实坑">
+    <meta property="og:title" content="用 PyInstaller 打包桌面应用，我踩过的 5 个坑 | MYTH 的博客">
+    <meta property="og:description" content="桌面应用打包的五个真实坑">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hjtr7mymht-dot.github.io/blog/posts/pyinstaller-packaging-pitfalls.html">
+    <link rel="alternate" type="application/rss+xml" title="MYTH 的博客" href="../feed.xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            var t = localStorage.getItem('theme');
+            if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', t);
+            // 入场动画只在 JS 可用时生效；blog.js 没跑起来就 3.5 秒后自动取消隐藏
+            document.documentElement.classList.add('js-anim');
+            setTimeout(function () {
+                if (!window.__blogReady) document.documentElement.classList.remove('js-anim');
+            }, 3500);
+        })();
+    </script>
+    <link rel="stylesheet" href="../assets/blog.css">
+</head>
+<body>
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="../../index.html" class="nav-logo">
+            <span class="logo-icon">M</span>
+            MYTH
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="../../index.html">首页</a></li>
+            <li><a href="../../index.html#about">关于</a></li>
+            <li><a href="../../index.html#repos">GitHub</a></li>
+            <li><a href="../../index.html#wechat">公众号</a></li>
+            <li><a href="../index.html" class="">博客</a></li>
+            <li><a href="../../index.html#contact">联系</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="菜单">
+            <span></span><span></span><span></span>
+        </button>
+        <button class="nav-theme-toggle" id="themeToggle" aria-label="切换主题">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="19.78" y1="4.22" x2="18.36" y2="5.64"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/></svg>
+        </button>
+    </div>
+</nav>
+<main class="container post-main">
+    <a class="back-link" href="../index.html">← 返回博客首页</a>
+    <article class="post-article">
+        <header class="post-header fade-up">
+            <div class="post-card-meta">
+                <time datetime="2026-11-16">2026 年 11 月 16 日</time>
+                <span class="tag">开发日志</span><span class="tag">Python</span>
+            </div>
+            <h1>用 PyInstaller 打包桌面应用，我踩过的 5 个坑</h1>
+            <p class="post-lede">桌面应用打包的五个真实坑</p>
+        </header>
+        <div class="prose fade-up">
+<p>写 Python 桌面小工具本身不算难，真正让我头大的，是把它打包成别人双击就能用的那一步。我用的是 PyInstaller，命令挺简单，但第一次打包完发给别人，各种问题就冒出来了。这篇不写教程，就把我实际撞上的五个坑记一下，都是那种「本地跑得好好的、一打包就变样」的事。</p>
+<h2 id="坑一本地能跑打包出去说缺模块">坑一：本地能跑，打包出去说缺模块</h2>
+<p>最常见的是隐藏导入。我代码里有些模块是运行时才动态引用的，PyInstaller 扫不到，打包时没带进去，跑到那一处才报错。解法也直接：命令行加 <code>--hidden-import</code> 把漏掉的模块手动点名，模块多了就干脆写进 spec 文件统一管。这类问题最折磨人的地方在于，它打包的时候一声不吭，专等你运行到那一支才炸。</p>
+<h2 id="坑二打包后图片和配置找不到了">坑二：打包后图片和配置找不到了</h2>
+<p>开发的时候资源用相对路径，图片、配置往旁边一放就能读。打包完路径全变了，程序还去找那个已经不存在的相对位置，自然读不到。后来我两件事一起做：打包时用 <code>--add-data</code> 把资源明确带进去；代码里兼容两种状态，判断一下当前是不是打包环境，打包了就从临时解开的目录读，没打包就还走原来的相对路径。这段写完，才算真的「双击哪儿都能跑」。</p>
+<h2 id="坑三打成单个文件启动慢得让人以为没打开">坑三：打成单个文件，启动慢得让人以为没打开</h2>
+<p>图省事我一开始打成单个 exe，分发确实方便，一个文件发过去就行。代价是每次双击都要先解开一遍，从点开到界面出来中间有明显停顿，别人还以为程序没响应。取舍之后我改成多文件的那种形式，启动快很多，就是文件散，分发时打个压缩包一起发。单文件还是多文件，没有对错，看你更在意分发省事还是启动体验。</p>
+<h2 id="坑四体积比想象中大得多">坑四：体积比想象中大得多</h2>
+<p>一个挺简单的图形界面程序，打包完的体积比源码大出好几个量级，第一次看到吓一跳。后来慢慢摸出几条：打包前用一个干净点的虚拟环境，只装真正需要的依赖，别把平时乱装的一堆东西都裹进去；用不到的模块显式排除掉。体积压不到极小，但从「吓一跳」变成「能接受」。</p>
+<h2 id="坑五图形界面程序还弹个黑框">坑五：图形界面程序还弹个黑框</h2>
+<p>明明是图形界面，双击后先闪出个黑色控制台窗口，很出戏，一开始我还以为哪里报错了。这个其实是参数的事，打包时把控制台去掉就好。属于第一种最懵、解决起来最快的一个坑。</p>
+<h2 id="一点体会">一点体会</h2>
+<p>这五个坑没有一个是「代码写错了」，全是打包这一步特有的。我的经验是，别等全做完才第一次打包——功能写一点就打一次、发给自己试一次，问题早冒出来早解决。PyInstaller 本身的命令不难，难的是这些「打包和开发两个世界对不上」的地方。摸清楚之后它还是挺省心的，毕竟一条命令就能把 Python 脚本变成别人能用的东西。</p>
+        </div>
+    </article>
+    <div class="post-nav"><a class="post-nav-link next" href="yi-duan-gao-zhong-wang-shi.html"><span>更早一篇</span><strong>一段高中往事的复盘</strong></a></div>
+</main>
+<footer class="site-footer">
+    <div class="footer-inner">
+        <p>© 2026 MYTH · 用 Python 生成的静态博客</p>
+        <div class="footer-links">
+            <a href="../../index.html">首页</a>
+            <a href="../../index.html#repos">开源项目</a>
+            <a href="https://github.com/hjtr7mymht-dot" target="_blank" rel="noopener">GitHub</a>
+            <a href="../feed.xml">RSS</a>
+        </div>
+    </div>
+</footer>
+<script src="../assets/blog.js"></script>
+</body>
+</html>

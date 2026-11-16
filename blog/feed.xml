@@ -6,6 +6,13 @@
     <description>AI 工具拆解、Python 自动化与物联网实践的真实记录。</description>
     <language>zh-cn</language>
     <item>
+      <title>用 PyInstaller 打包桌面应用，我踩过的 5 个坑</title>
+      <link>https://hjtr7mymht-dot.github.io/blog/posts/pyinstaller-packaging-pitfalls.html</link>
+      <guid>https://hjtr7mymht-dot.github.io/blog/posts/pyinstaller-packaging-pitfalls.html</guid>
+      <pubDate>Mon, 16 Nov 2026 00:00:00 +0800</pubDate>
+      <description>桌面应用打包的五个真实坑</description>
+    </item>
+    <item>
       <title>一段高中往事的复盘</title>
       <link>https://hjtr7mymht-dot.github.io/blog/posts/yi-duan-gao-zhong-wang-shi.html</link>
       <guid>https://hjtr7mymht-dot.github.io/blog/posts/yi-duan-gao-zhong-wang-shi.html</guid>
